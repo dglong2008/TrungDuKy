@@ -13,7 +13,7 @@ A travel recommendation project designed to help users discover destinations and
 
 - Châu Nguyễn Tố Trinh
 - Trần Thị Tâm Phú
-- Nguyên Khôi
+- Nguyễn Tiết Nguyên Khôi
 
 ## Project Overview
 
