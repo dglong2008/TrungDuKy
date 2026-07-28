@@ -1,0 +1,132 @@
+[
+  {
+    "profile": "Quang Hùng MasterD",
+    "n_days": 5,
+    "itinerary": [
+      {
+        "day": 1,
+        "stops": [
+          {
+            "name": "Hang Sơn Đoòng",
+            "province": "Quảng Bình",
+            "lat": 17.44415,
+            "lng": 106.29358,
+            "cosine_score": 0.7627,
+            "month_match": "off-season"
+          },
+          {
+            "name": "Hang Va",
+            "province": "Quảng Bình",
+            "lat": 17.48947,
+            "lng": 106.2848,
+            "cosine_score": 0.7386,
+            "month_match": "off-season"
+          },
+          {
+            "name": "Phong Nha",
+            "province": "Quảng Bình",
+            "lat": 17.58137,
+            "lng": 106.28308,
+            "cosine_score": 0.6525,
+            "month_match": "off-season"
+          }
+        ],
+        "legs_km": [
+          5.1,
+          10.2
+        ],
+        "total_km": 15.3
+      },
+      {
+        "day": 2,
+        "stops": [
+          {
+            "name": "Vườn Quốc gia Bạch Mã",
+            "province": "Huế",
+            "lat": 16.2,
+            "lng": 107.8667,
+            "cosine_score": 0.6018,
+            "month_match": "off-season"
+          },
+          {
+            "name": "Đầm Chuồn",
+            "province": "Huế",
+            "lat": 16.516259,
+            "lng": 107.643759,
+            "cosine_score": 0.5961,
+            "month_match": "off-season"
+          }
+        ],
+        "legs_km": [
+          42.5
+        ],
+        "total_km": 42.5
+      },
+      {
+        "day": 3,
+        "stops": [
+          {
+            "name": "Làng cổ Bích La",
+            "province": "Quảng Trị",
+            "lat": 16.77685,
+            "lng": 107.18595,
+            "cosine_score": 0.6003,
+            "month_match": "match"
+          },
+          {
+            "name": "Chợ phiên Cam Lộ",
+            "province": "Quảng Trị",
+            "lat": 16.816461,
+            "lng": 107.010006,
+            "cosine_score": 0.5841,
+            "month_match": "match"
+          }
+        ],
+        "legs_km": [
+          19.2
+        ],
+        "total_km": 19.2
+      },
+      {
+        "day": 4,
+        "stops": [
+          {
+            "name": "Cửa khẩu Lao Bảo",
+            "province": "Quảng Trị",
+            "lat": 16.622663,
+            "lng": 106.587632,
+            "cosine_score": 0.6238,
+            "month_match": "match"
+          }
+        ],
+        "legs_km": [],
+        "total_km": 0.0
+      },
+      {
+        "day": 5,
+        "stops": [
+          {
+            "name": "Mộ Đại Tướng Võ Nguyên Giáp",
+            "province": "Quảng Bình",
+            "lat": 17.924949,
+            "lng": 106.494932,
+            "cosine_score": 0.6222,
+            "month_match": "match"
+          },
+          {
+            "name": "Đền thờ Liễu Hạnh",
+            "province": "Quảng Bình",
+            "lat": 17.953538,
+            "lng": 106.468953,
+            "cosine_score": 0.6138,
+            "month_match": "match"
+          }
+        ],
+        "legs_km": [
+          4.2
+        ],
+        "total_km": 4.2
+      }
+    ]
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "profile": "Quang Hùng MasterD",
+    "travel_month": "oct",
+    "top_k": 10,
+    "results": [
+      {
+        "place": "Hang Sơn Đoòng",
+        "province": "Quảng Bình",
+        "score": 0.7627,
+        "month_score": 0
+      },
+      {
+        "place": "Hang Va",
+        "province": "Quảng Bình",
+        "score": 0.7386,
+        "month_score": 0
+      },
+      {
+        "place": "Phong Nha",
+        "province": "Quảng Bình",
+        "score": 0.6525,
+        "month_score": 0
+      },
+      {
+        "place": "Cửa khẩu Lao Bảo",
+        "province": "Quảng Trị",
+        "score": 0.6238,
+        "month_score": 1
+      },
+      {
+        "place": "Mộ Đại Tướng Võ Nguyên Giáp",
+        "province": "Quảng Bình",
+        "score": 0.6222,
+        "month_score": 1
+      },
+      {
+        "place": "Đền thờ Liễu Hạnh",
+        "province": "Quảng Bình",
+        "score": 0.6138,
+        "month_score": 1
+      },
+      {
+        "place": "Vườn Quốc gia Bạch Mã",
+        "province": "Huế",
+        "score": 0.6018,
+        "month_score": 0
+      },
+      {
+        "place": "Làng cổ Bích La",
+        "province": "Quảng Trị",
+        "score": 0.6003,
+        "month_score": 1
+      },
+      {
+        "place": "Đầm Chuồn",
+        "province": "Huế",
+        "score": 0.5961,
+        "month_score": 0
+      },
+      {
+        "place": "Chợ phiên Cam Lộ",
+        "province": "Quảng Trị",
+        "score": 0.5841,
+        "month_score": 1
+      }
+    ]
+  }
+]
