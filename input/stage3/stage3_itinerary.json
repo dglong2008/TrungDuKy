@@ -1,0 +1,131 @@
+[
+  {
+    "profile": "user_1",
+    "n_days": 5,
+    "itinerary": [
+      {
+        "day": 1,
+        "stops": [
+          {
+            "name": "cầu qua phá tam giang",
+            "province": "Huế",
+            "lat": 16.58219,
+            "lng": 107.5885,
+            "cosine_score": 0.6433,
+            "month_match": "neutral"
+          },
+          {
+            "name": "đầm chuồn",
+            "province": "Huế",
+            "lat": 16.516259,
+            "lng": 107.643759,
+            "cosine_score": 0.8297,
+            "month_match": "neutral"
+          }
+        ],
+        "legs_km": [
+          9.4
+        ],
+        "total_km": 9.4
+      },
+      {
+        "day": 2,
+        "stops": [
+          {
+            "name": "cồn cát quang phú",
+            "province": "Quảng Bình",
+            "lat": 17.5302,
+            "lng": 106.6218,
+            "cosine_score": 0.6432,
+            "month_match": "neutral"
+          },
+          {
+            "name": "biển nhật lệ",
+            "province": "Quảng Bình",
+            "lat": 17.492663,
+            "lng": 106.627266,
+            "cosine_score": 0.6633,
+            "month_match": "neutral"
+          }
+        ],
+        "legs_km": [
+          4.2
+        ],
+        "total_km": 4.2
+      },
+      {
+        "day": 3,
+        "stops": [
+          {
+            "name": "đảo cồn cỏ",
+            "province": "Quảng Trị",
+            "lat": 17.15839,
+            "lng": 107.33983,
+            "cosine_score": 0.6971,
+            "month_match": "neutral"
+          },
+          {
+            "name": "mũi trèo",
+            "province": "Quảng Trị",
+            "lat": 17.0892,
+            "lng": 107.1123,
+            "cosine_score": 0.6602,
+            "month_match": "neutral"
+          },
+          {
+            "name": "địa đạo vịnh mốc",
+            "province": "Quảng Trị",
+            "lat": 17.07467,
+            "lng": 107.1128,
+            "cosine_score": 0.6698,
+            "month_match": "neutral"
+          },
+          {
+            "name": "biển cửa việt",
+            "province": "Quảng Trị",
+            "lat": 16.912938,
+            "lng": 107.186422,
+            "cosine_score": 0.7023,
+            "month_match": "neutral"
+          }
+        ],
+        "legs_km": [
+          25.4,
+          1.6,
+          19.6
+        ],
+        "total_km": 46.6
+      },
+      {
+        "day": 4,
+        "stops": [
+          {
+            "name": "lăng cô",
+            "province": "Huế",
+            "lat": 16.241,
+            "lng": 108.0782,
+            "cosine_score": 0.67,
+            "month_match": "neutral"
+          }
+        ],
+        "legs_km": [],
+        "total_km": 0.0
+      },
+      {
+        "day": 5,
+        "stops": [
+          {
+            "name": "vũng chùa - đảo yến",
+            "province": "Quảng Bình",
+            "lat": 17.92969,
+            "lng": 106.5066,
+            "cosine_score": 0.6488,
+            "month_match": "neutral"
+          }
+        ],
+        "legs_km": [],
+        "total_km": 0.0
+      }
+    ]
+  }
+]

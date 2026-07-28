@@ -1,0 +1,11 @@
+﻿profile,day,stop_order,place,province,leg_km,day_total_km
+user_1,1,1,cầu qua phá tam giang,Huế,9.4,9.4
+user_1,1,2,đầm chuồn,Huế,0.0,9.4
+user_1,2,1,cồn cát quang phú,Quảng Bình,4.2,4.2
+user_1,2,2,biển nhật lệ,Quảng Bình,0.0,4.2
+user_1,3,1,đảo cồn cỏ,Quảng Trị,25.4,46.6
+user_1,3,2,mũi trèo,Quảng Trị,1.6,46.6
+user_1,3,3,địa đạo vịnh mốc,Quảng Trị,19.6,46.6
+user_1,3,4,biển cửa việt,Quảng Trị,0.0,46.6
+user_1,4,1,lăng cô,Huế,0.0,0.0
+user_1,5,1,vũng chùa - đảo yến,Quảng Bình,0.0,0.0
