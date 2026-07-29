@@ -1,6 +1,6 @@
-const { recommend } = require("../assets/js/recommendation");
-
-const destinations = require("../input/stage1/stage1_dataset.json");
+const path = require("path");
+const { recommend } = require(path.join(__dirname, "..", "assets", "js", "recommendation"));
+const destinations = require(path.join(__dirname, "..", "input", "stage1", "stage1_dataset.json"));
 
 module.exports = (req, res) => {
     if (req.method !== "POST") {
@@ -21,6 +21,6 @@ module.exports = (req, res) => {
         const results = recommend(userPrefs, destinations);
         res.json(results);
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ error: err.message, stack: err.stack });
     }
 };
