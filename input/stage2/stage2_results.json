@@ -1,66 +1,334 @@
 [
   {
-    "profile": "user_1",
+    "profile": "user_1_family",
     "travel_month": null,
     "results": [
       {
         "place": "Đầm Chuồn",
         "province": "Huế",
-        "score": 0.8582,
+        "score": 0.942,
         "month_score": 0.5
       },
       {
         "place": "Biển Cửa Việt",
         "province": "Quảng Trị",
-        "score": 0.7339,
-        "month_score": 0.5
-      },
-      {
-        "place": "Đảo Cồn Cỏ",
-        "province": "Quảng Trị",
-        "score": 0.7187,
-        "month_score": 0.5
-      },
-      {
-        "place": "Lăng Cô",
-        "province": "Huế",
-        "score": 0.6924,
-        "month_score": 0.5
-      },
-      {
-        "place": "Biển Nhật Lệ",
-        "province": "Quảng Bình",
-        "score": 0.6893,
-        "month_score": 0.5
-      },
-      {
-        "place": "Địa đạo Vịnh Mốc",
-        "province": "Quảng Trị",
-        "score": 0.6797,
+        "score": 0.8661,
         "month_score": 0.5
       },
       {
         "place": "Cầu qua Phá Tam Giang",
         "province": "Huế",
-        "score": 0.6751,
+        "score": 0.8641,
         "month_score": 0.5
       },
       {
-        "place": "Mũi Trèo",
-        "province": "Quảng Trị",
-        "score": 0.6668,
+        "place": "Lăng Cô",
+        "province": "Huế",
+        "score": 0.8377,
+        "month_score": 0.5
+      },
+      {
+        "place": "Nhà vườn An Hiên",
+        "province": "Huế",
+        "score": 0.8359,
+        "month_score": 0.5
+      },
+      {
+        "place": "Biển Nhật Lệ",
+        "province": "Quảng Bình",
+        "score": 0.8298,
         "month_score": 0.5
       },
       {
         "place": "Vũng Chùa - Đảo Yến",
         "province": "Quảng Bình",
-        "score": 0.6524,
+        "score": 0.8282,
+        "month_score": 0.5
+      },
+      {
+        "place": "Đảo Cồn Cỏ",
+        "province": "Quảng Trị",
+        "score": 0.8265,
+        "month_score": 0.5
+      },
+      {
+        "place": "Phong Nha",
+        "province": "Quảng Bình",
+        "score": 0.8226,
+        "month_score": 0.5
+      },
+      {
+        "place": "Sông Hương",
+        "province": "Huế",
+        "score": 0.8172,
+        "month_score": 0.5
+      }
+    ]
+  },
+  {
+    "profile": "user_2_adventure",
+    "travel_month": null,
+    "top_k": 10,
+    "results": [
+      {
+        "place": "Hang Va",
+        "province": "Quảng Bình",
+        "score": 0.91,
+        "month_score": 0.5
+      },
+      {
+        "place": "Hang Sơn Đoòng",
+        "province": "Quảng Bình",
+        "score": 0.8884,
+        "month_score": 0.5
+      },
+      {
+        "place": "Núi Talung, núi Klu",
+        "province": "Quảng Trị",
+        "score": 0.7871,
+        "month_score": 0.5
+      },
+      {
+        "place": "Mũi Trèo",
+        "province": "Quảng Trị",
+        "score": 0.772,
+        "month_score": 0.5
+      },
+      {
+        "place": "Vườn Quốc gia Bạch Mã",
+        "province": "Huế",
+        "score": 0.7711,
+        "month_score": 0.5
+      },
+      {
+        "place": "Đảo Cồn Cỏ",
+        "province": "Quảng Trị",
+        "score": 0.7189,
+        "month_score": 0.5
+      },
+      {
+        "place": "Phong Nha",
+        "province": "Quảng Bình",
+        "score": 0.7071,
+        "month_score": 0.5
+      },
+      {
+        "place": "Sông Đakrông",
+        "province": "Quảng Trị",
+        "score": 0.6946,
+        "month_score": 0.5
+      },
+      {
+        "place": "Đầm Chuồn",
+        "province": "Huế",
+        "score": 0.6777,
+        "month_score": 0.5
+      },
+      {
+        "place": "Vũng Chùa - Đảo Yến",
+        "province": "Quảng Bình",
+        "score": 0.6401,
+        "month_score": 0.5
+      }
+    ]
+  },
+  {
+    "profile": "user_3_history",
+    "travel_month": null,
+    "top_k": 10,
+    "results": [
+      {
+        "place": "Mộ Đại Tướng Võ Nguyên Giáp",
+        "province": "Quảng Bình",
+        "score": 0.896,
+        "month_score": 0.5
+      },
+      {
+        "place": "Thành cổ Đồng Hới",
+        "province": "Quảng Bình ",
+        "score": 0.8926,
+        "month_score": 0.5
+      },
+      {
+        "place": "Lăng Tự Đức",
+        "province": "Huế",
+        "score": 0.8508,
+        "month_score": 0.5
+      },
+      {
+        "place": "Lăng Minh Mạng",
+        "province": "Huế",
+        "score": 0.8335,
+        "month_score": 0.5
+      },
+      {
+        "place": "Đại Nội Huế",
+        "province": "Huế",
+        "score": 0.8059,
+        "month_score": 0.5
+      },
+      {
+        "place": "Thánh địa La Vang",
+        "province": "Quảng Trị",
+        "score": 0.7844,
+        "month_score": 0.5
+      },
+      {
+        "place": "Nghĩa trang Trường Sơn",
+        "province": "Quảng Trị",
+        "score": 0.7804,
+        "month_score": 0.5
+      },
+      {
+        "place": "Thành cổ Quảng Trị",
+        "province": "Quảng Trị",
+        "score": 0.7654,
+        "month_score": 0.5
+      },
+      {
+        "place": "Bản Vân Kiều",
+        "province": "Quảng Trị",
+        "score": 0.7559,
+        "month_score": 0.5
+      },
+      {
+        "place": "Làng cổ Bích La",
+        "province": "Quảng Trị",
+        "score": 0.7536,
+        "month_score": 0.5
+      }
+    ]
+  },
+  {
+    "profile": "user_4_photo",
+    "travel_month": null,
+    "top_k": 10,
+    "results": [
+      {
+        "place": "Đầm Chuồn",
+        "province": "Huế",
+        "score": 0.8966,
+        "month_score": 0.5
+      },
+      {
+        "place": "Vũng Chùa - Đảo Yến",
+        "province": "Quảng Bình",
+        "score": 0.8573,
+        "month_score": 0.5
+      },
+      {
+        "place": "Đảo Cồn Cỏ",
+        "province": "Quảng Trị",
+        "score": 0.8455,
+        "month_score": 0.5
+      },
+      {
+        "place": "Lăng Minh Mạng",
+        "province": "Huế",
+        "score": 0.8321,
+        "month_score": 0.5
+      },
+      {
+        "place": "Biển Đá Nhảy",
+        "province": "Quảng Bình",
+        "score": 0.8299,
+        "month_score": 0.5
+      },
+      {
+        "place": "Biển Cửa Việt",
+        "province": "Quảng Trị",
+        "score": 0.814,
+        "month_score": 0.5
+      },
+      {
+        "place": "Lăng Cô",
+        "province": "Huế",
+        "score": 0.8068,
+        "month_score": 0.5
+      },
+      {
+        "place": "Địa đạo Vịnh Mốc",
+        "province": "Quảng Trị",
+        "score": 0.8052,
         "month_score": 0.5
       },
       {
         "place": "Cồn cát Quang Phú",
         "province": "Quảng Bình",
-        "score": 0.6494,
+        "score": 0.7907,
+        "month_score": 0.5
+      },
+      {
+        "place": "Lăng Tự Đức",
+        "province": "Huế",
+        "score": 0.7901,
+        "month_score": 0.5
+      }
+    ]
+  },
+  {
+    "profile": "user_5_nature",
+    "travel_month": null,
+    "top_k": 10,
+    "results": [
+      {
+        "place": "Đầm Chuồn",
+        "province": "Huế",
+        "score": 0.9072,
+        "month_score": 0.5
+      },
+      {
+        "place": "Đảo Cồn Cỏ",
+        "province": "Quảng Trị",
+        "score": 0.8616,
+        "month_score": 0.5
+      },
+      {
+        "place": "Vũng Chùa - Đảo Yến",
+        "province": "Quảng Bình",
+        "score": 0.8591,
+        "month_score": 0.5
+      },
+      {
+        "place": "Vườn Quốc gia Bạch Mã",
+        "province": "Huế",
+        "score": 0.8451,
+        "month_score": 0.5
+      },
+      {
+        "place": "Phong Nha",
+        "province": "Quảng Bình",
+        "score": 0.837,
+        "month_score": 0.5
+      },
+      {
+        "place": "Mũi Trèo",
+        "province": "Quảng Trị",
+        "score": 0.8183,
+        "month_score": 0.5
+      },
+      {
+        "place": "Lăng Cô",
+        "province": "Huế",
+        "score": 0.8105,
+        "month_score": 0.5
+      },
+      {
+        "place": "Biển Cửa Việt",
+        "province": "Quảng Trị",
+        "score": 0.8101,
+        "month_score": 0.5
+      },
+      {
+        "place": "Địa đạo Vịnh Mốc",
+        "province": "Quảng Trị",
+        "score": 0.8067,
+        "month_score": 0.5
+      },
+      {
+        "place": "Biển Đá Nhảy",
+        "province": "Quảng Bình",
+        "score": 0.8057,
         "month_score": 0.5
       },
       {
