@@ -7,6 +7,20 @@ module.exports = (req, res) => {
         res.status(405).json({ error: "Method not allowed" });
         return;
     }
-    const results = recommend(req.body, destinations);
-    res.json(results);
+
+    let userPrefs = req.body;
+    if (typeof userPrefs === "string") {
+        userPrefs = JSON.parse(userPrefs);
+    }
+    if (!userPrefs) {
+        res.status(400).json({ error: "No body provided" });
+        return;
+    }
+
+    try {
+        const results = recommend(userPrefs, destinations);
+        res.json(results);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 };
