@@ -96,67 +96,49 @@ function cosineSim13(userPrefs, place, travelMonth = null) {
 }
 
 // Recommend
-function recommend(profiles, dataset) {
-    // TODO 3: Score tất cả destinations cho mỗi profile, sort và lấy top-K
-    const allResults = [];
-    const resultRows = [];
+function recommend(userPrefs, dataset) {
+    const prefs = {};
+    ALL_FEATURES.forEach((f) => {
+        if (f !== "month_score" && f in userPrefs) {
+            prefs[f] = parseFloat(userPrefs[f]);
+        }
+    });
 
-    for (const prof of profiles) {
-        const name = prof["profile_name"];
-        const travelMonth = prof["travel_month"] || null;
-        const topK = parseInt(prof["top_k"] || 10);
-        const userPrefs = {};
-        ALL_FEATURES.forEach((f) => {
-            if (f !== "month_score" && f in prof) {
-                userPrefs[f] = parseFloat(prof[f]);
+    const topK = parseInt(userPrefs.topK || 10);
+    const monthNumbers = userPrefs.months || [];
+    const travelMonths = monthNumbers.map((m) => MONTH_NAMES[m - 1]);
+
+    const scored = [];
+    for (const place of dataset) {
+        let bestScore = 0;
+        let bestMonthScore = 0.5;
+
+        if (travelMonths.length === 0) {
+            bestScore = cosineSim13(prefs, place, null);
+            bestMonthScore = 0.5;
+        } else {
+            for (const tm of travelMonths) {
+                const score = cosineSim13(prefs, place, tm);
+                const ms = encodeMonth(place["best_months"], tm);
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMonthScore = ms;
+                }
             }
-        });
-
-        // TODO: score tất cả destinations
-        const scored = [];
-        for (const place of dataset) {
-            const score = cosineSim13(userPrefs, place, travelMonth); // ← cosine_sim_13(user_prefs, place, travel_month)
-            const monthScore = encodeMonth(place["best_months"], travelMonth); // ← encode_month(place['best_months'], travel_month)
-            scored.append({
-                place: place["place"],
-                province: place["province"],
-                score: score,
-                month_score: monthScore,
-            });
         }
 
-        // TODO: sort giảm dần theo score và lấy top_k
-        scored.sort((a, b) => b["score"] - a["score"]); // ← key=lambda x: x['score']
-        const top = scored.slice(0, topK);
-
-        allResults.push({
-            profile: name,
-            travel_month: travelMonth,
-            top_k: topK,
-            results: top,
+        scored.push({
+            place: place["place"],
+            province: place["province"],
+            score: bestScore,
+            month_score: bestMonthScore,
         });
-        for (let i = 0; i < top.length; i++) {
-            const r = top[i];
-            const rank = i + 1;
-            resultRows.push({
-                profile: name,
-                rank: rank,
-                place: r["place"],
-                province: r["province"],
-                cosine_score: r["score"],
-                month_match:
-                    r["month_score"] === 1.0
-                        ? "match"
-                        : r["month_score"] === 0.5
-                          ? "neutral"
-                          : "off-season",
-            });
-        }
     }
-    return {
-        allResults,
-        resultRows,
-    };
+
+    scored.sort((a, b) => b.score - a.score);
+    const top = scored.slice(0, topK);
+
+    return top;
 }
 
 // distance
@@ -360,7 +342,7 @@ function tspNearestNeighbor(points) {
     //         # TODO 2a: Tìm điểm chưa thăm gần nhất
     //         nxt = min((i for i in range(n) if i not in visited), key = lambda i: euclidean(points[cur], points[i]))  # ← min((i for i in range(n) if i not in visited),
     //                     #        key=lambda i: euclidean(points[cur], points[i]))
-    //         visited.add(nxt); order.append(nxt); cur = nxt
+    //         visited.add(nxt); order.push(nxt); cur = nxt
 
     //     # TODO 2b: Tính tổng khoảng cách Haversine của route này
     //     total = sum(haversine_km(points[order[i]], points[order[i+1]]) for i in range(len(order)-1))  # ← sum(haversine_km(points[order[i]], points[order[i+1]])
