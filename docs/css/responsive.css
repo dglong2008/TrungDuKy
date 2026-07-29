@@ -1,0 +1,19 @@
+@media (max-width: 575.98px) {
+  .destinations__content .feature {
+    gap: 5px;
+  }
+  .destinations__content .left {
+    width: 30%;
+    font-size: 0.9rem;
+  }
+  .destinations__content .mid {
+    width: 60%;
+  }
+  .destinations__content .right {
+    width: 10%;
+    text-align: right;
+    font-size: 0.9rem;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */
