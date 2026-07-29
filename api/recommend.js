@@ -1,14 +1,12 @@
 const { recommend } = require("../assets/js/recommendation");
-const express = require("express");
-
-const app = express();
-app.use(express.json());
 
 const destinations = require("../input/stage1/stage1_dataset.json");
 
-app.post("/api/recommend", (req, res) => {
+module.exports = (req, res) => {
+    if (req.method !== "POST") {
+        res.status(405).json({ error: "Method not allowed" });
+        return;
+    }
     const results = recommend(req.body, destinations);
     res.json(results);
-});
-
-module.exports = app;
+};
