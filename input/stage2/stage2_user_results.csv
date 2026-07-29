@@ -1,0 +1,11 @@
+profile,rank,place,province,cosine_score,month_match
+user_1,1,Đầm Chuồn,Huế,0.8582,neutral
+user_1,2,Biển Cửa Việt,Quảng Trị,0.7339,neutral
+user_1,3,Đảo Cồn Cỏ,Quảng Trị,0.7187,neutral
+user_1,4,Lăng Cô,Huế,0.6924,neutral
+user_1,5,Biển Nhật Lệ,Quảng Bình,0.6893,neutral
+user_1,6,Địa đạo Vịnh Mốc,Quảng Trị,0.6797,neutral
+user_1,7,Cầu qua Phá Tam Giang,Huế,0.6751,neutral
+user_1,8,Mũi Trèo,Quảng Trị,0.6668,neutral
+user_1,9,Vũng Chùa - Đảo Yến,Quảng Bình,0.6524,neutral
+user_1,10,Cồn cát Quang Phú,Quảng Bình,0.6494,neutral
