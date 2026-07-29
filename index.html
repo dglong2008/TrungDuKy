@@ -29,93 +29,95 @@
     </head>
     <body>
         <div class="row destinations__container">
-            <div class="col-12 col-md-3 col-lg-4">
-                <form class="card" id="prefsForm">
-                    <div class="header">
-                        <div class="avatar">
-                            <img src="./docs/sources/img/logo.jpg" alt="" />
-                        </div>
-                        <div class="title-group">
-                            <h1>TrungDuKy</h1>
-                            <p>Tell us what you're looking for</p>
-                        </div>
-                    </div>
-
-                    <div id="sliders"></div>
-
-                    <div class="divider"></div>
-
-                    <div class="month-heading">
-                        Best months to travel
-                        <span>Tap the months that work for you</span>
-                    </div>
-                    <div class="months" id="months"></div>
-
-                    <div class="trip-details">
-                        <div class="trip-field">
-                            <label for="days">Trip length (days)</label>
-                            <div class="stepper">
-                                <button
-                                    type="button"
-                                    id="daysMinus"
-                                    aria-label="Decrease days"
-                                >
-                                    –
-                                </button>
-                                <input
-                                    type="number"
-                                    id="days"
-                                    name="days"
-                                    min="1"
-                                    max="30"
-                                    value="5"
-                                    inputmode="numeric"
-                                />
-                                <button
-                                    type="button"
-                                    id="daysPlus"
-                                    aria-label="Increase days"
-                                >
-                                    +
-                                </button>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="sidebar-sticky">
+                    <form class="card" id="prefsForm">
+                        <div class="header">
+                            <div class="avatar">
+                                <img src="./docs/sources/img/logo.jpg" alt="" />
+                            </div>
+                            <div class="title-group">
+                                <h1>TrungDuKy</h1>
+                                <p>Tell us what you're looking for</p>
                             </div>
                         </div>
-                        <div class="trip-field">
-                            <label for="topK">Show top</label>
-                            <div class="stepper">
-                                <button
-                                    type="button"
-                                    id="kMinus"
-                                    aria-label="Decrease number of results"
-                                >
-                                    –
-                                </button>
-                                <input
-                                    type="number"
-                                    id="topK"
-                                    name="topK"
-                                    min="1"
-                                    max="40"
-                                    value="3"
-                                    inputmode="numeric"
-                                />
-                                <button
-                                    type="button"
-                                    id="kPlus"
-                                    aria-label="Increase number of results"
-                                >
-                                    +
-                                </button>
+
+                        <div id="sliders"></div>
+
+                        <div class="divider"></div>
+
+                        <div class="month-heading">
+                            Best months to travel
+                            <span>Tap the months that work for you</span>
+                        </div>
+                        <div class="months" id="months"></div>
+
+                        <div class="trip-details">
+                            <div class="trip-field">
+                                <label for="days">Trip length (days)</label>
+                                <div class="stepper">
+                                    <button
+                                        type="button"
+                                        id="daysMinus"
+                                        aria-label="Decrease days"
+                                    >
+                                        –
+                                    </button>
+                                    <input
+                                        type="number"
+                                        id="days"
+                                        name="days"
+                                        min="1"
+                                        max="30"
+                                        value="5"
+                                        inputmode="numeric"
+                                    />
+                                    <button
+                                        type="button"
+                                        id="daysPlus"
+                                        aria-label="Increase days"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="trip-field">
+                                <label for="topK">Show top</label>
+                                <div class="stepper">
+                                    <button
+                                        type="button"
+                                        id="kMinus"
+                                        aria-label="Decrease number of results"
+                                    >
+                                        –
+                                    </button>
+                                    <input
+                                        type="number"
+                                        id="topK"
+                                        name="topK"
+                                        min="1"
+                                        max="40"
+                                        value="3"
+                                        inputmode="numeric"
+                                    />
+                                    <button
+                                        type="button"
+                                        id="kPlus"
+                                        aria-label="Increase number of results"
+                                    >
+                                        +
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <button type="submit" class="submit">
-                        Save preferences
-                    </button>
-                </form>
+                        <button type="submit" class="submit">
+                            Save preferences
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="col-12 col-md-9 col-lg-8">
+            <div class="col-12 col-md-6 col-lg-8">
                 <div class="destinations__showing">Showing places</div>
                 <div
                     class="destinations__grid row g-3 row-cols-1 row-cols-lg-2"
