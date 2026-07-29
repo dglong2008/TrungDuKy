@@ -20,7 +20,7 @@ if (userPreferences)
         const dataObject = Object.fromEntries(formData);
     };
 
-fetch("../../input/stage1/stage1_dataset.json")
+fetch("./input/stage1/stage1_dataset.json")
     .then((response) => {
         if (!response.ok) throw new Error("Không thể tải được file");
         return response.json();
