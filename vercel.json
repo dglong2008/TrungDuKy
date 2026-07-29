@@ -1,4 +1,7 @@
 {
-    "includeFiles": ["assets/js/recommendation.js", "input/stage1/stage1_dataset.json"],
-    "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }]
+    "functions": {
+        "api/recommend.js": {
+            "includeFiles": "assets/js/recommendation.js, input/stage1/stage1_dataset.json"
+        }
+    }
 }
