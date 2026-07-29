@@ -1,7 +1,6 @@
 {
     "scripts": {
-        "dev": "sass --watch docs/scss:docs/css --source-map",
-        "build": "sass assets/css/style.css:assets/css/style.min.css --style=compressed --no-source-map"
+        "dev": "sass --watch docs/scss:docs/css --source-map"
     },
     "dependencies": {
         "sass": "^1.77.0"
