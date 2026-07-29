@@ -38,6 +38,7 @@ function loadData(formerData, indices = [-1]) {
         data.push(formerData[i]);
     }
     const parent = document.querySelector(".destinations__grid");
+    parent.innerHTML = "";
     const keys = [
         "adventure",
         "beach",
@@ -274,13 +275,128 @@ document.getElementById("prefsForm").addEventListener("submit", (e) => {
     data.months = Array.from(selectedMonths).sort((a, b) => a - b);
 
     // CẦN THÊM — gửi data cho server
-    fetch("http://localhost:3000/api/recommend", {
+    fetch("/api/recommend", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
     })
         .then((res) => res.json())
         .then((results) => {
+            // loadData(results);
             displayResults(results);
         });
 });
+
+function recommend(userPrefs, dataset) {
+    const prefs = {};
+    ALL_FEATURES.forEach((f) => {
+        if (f !== "month_score" && f in userPrefs) {
+            prefs[f] = parseFloat(userPrefs[f]);
+        }
+    });
+
+    const topK = parseInt(userPrefs.topK || 10);
+    const monthNumbers = userPrefs.months || [];
+    const travelMonths = monthNumbers.map((m) => MONTH_NAMES[m - 1]);
+
+    const scored = [];
+    for (const place of dataset) {
+        let bestScore = 0;
+        let bestMonthScore = 0.5;
+
+        if (travelMonths.length === 0) {
+            bestScore = cosineSim13(prefs, place, null);
+            bestMonthScore = 0.5;
+        } else {
+            for (const tm of travelMonths) {
+                const score = cosineSim13(prefs, place, tm);
+                const ms = encodeMonth(place["best_months"], tm);
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMonthScore = ms;
+                }
+            }
+        }
+
+        scored.push({
+            place: place["place"],
+            province: place["province"],
+            score: bestScore,
+            month_score: bestMonthScore,
+        });
+    }
+
+    scored.sort((a, b) => b.score - a.score);
+    const top = scored.slice(0, topK);
+
+    return top;
+}
+
+function displayResults(results) {
+    const parent = document.querySelector(".destinations__grid");
+    parent.innerHTML = "";
+
+    const showing = document.querySelector(".destinations__showing");
+    showing.innerHTML = `Showing ${results.length} places`;
+
+    const keys = [
+        "adventure",
+        "beach",
+        "budget",
+        "crowd",
+        "culture",
+        "family",
+        "food",
+        "history",
+        "nature",
+        "photo",
+        "relax",
+    ];
+
+    const monthMap = {
+        jan: 1,
+        feb: 2,
+        mar: 3,
+        apr: 4,
+        may: 5,
+        jun: 6,
+        jul: 7,
+        aug: 8,
+        sep: 9,
+        oct: 10,
+        nov: 11,
+        dec: 12,
+    };
+
+    console.log(results);
+
+    for (const des of results) {
+        const bootstrapCol = document.createElement("div");
+        bootstrapCol.className = "col";
+
+        const card = document.createElement("div");
+        card.className = "destinations__card";
+        bootstrapCol.appendChild(card);
+
+        const headings = document.createElement("div");
+        headings.className = "destinations__headings";
+
+        const img = document.createElement("img");
+        img.className = "destinations__img";
+        img.src =
+            "https://nld.mediacdn.vn/thumb_w/698/291774122806476800/2024/11/18/dong-phong-nha-ke-bang-dep-den-choang-ngop-17319168370561406931222.jpg";
+
+        const title = document.createElement("div");
+        title.className = "destinations__title";
+        title.innerHTML = `<span>${des.place}</span><p>${des.province}</p>`;
+        headings.append(img, title);
+
+        const score = document.createElement("div");
+        score.className = "destinations__score";
+        score.innerHTML = `Match: ${Math.round(des.score * 100)}%`;
+        headings.append(score);
+
+        card.append(headings);
+        parent.appendChild(bootstrapCol);
+    }
+}
