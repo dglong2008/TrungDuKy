@@ -1,11 +1,51 @@
 ﻿profile,rank,place,province,cosine_score,month_match
-user_1,1,Đầm Chuồn,Huế,0.8582,neutral
-user_1,2,Biển Cửa Việt,Quảng Trị,0.7339,neutral
-user_1,3,Đảo Cồn Cỏ,Quảng Trị,0.7187,neutral
-user_1,4,Lăng Cô,Huế,0.6924,neutral
-user_1,5,Biển Nhật Lệ,Quảng Bình,0.6893,neutral
-user_1,6,Địa đạo Vịnh Mốc,Quảng Trị,0.6797,neutral
-user_1,7,Cầu qua Phá Tam Giang,Huế,0.6751,neutral
-user_1,8,Mũi Trèo,Quảng Trị,0.6668,neutral
-user_1,9,Vũng Chùa - Đảo Yến,Quảng Bình,0.6524,neutral
-user_1,10,Cồn cát Quang Phú,Quảng Bình,0.6494,neutral
+user_1_family,1,Đầm Chuồn,Huế,0.942,neutral
+user_1_family,2,Biển Cửa Việt,Quảng Trị,0.8661,neutral
+user_1_family,3,Cầu qua Phá Tam Giang,Huế,0.8641,neutral
+user_1_family,4,Lăng Cô,Huế,0.8377,neutral
+user_1_family,5,Nhà vườn An Hiên,Huế,0.8359,neutral
+user_1_family,6,Biển Nhật Lệ,Quảng Bình,0.8298,neutral
+user_1_family,7,Vũng Chùa - Đảo Yến,Quảng Bình,0.8282,neutral
+user_1_family,8,Đảo Cồn Cỏ,Quảng Trị,0.8265,neutral
+user_1_family,9,Phong Nha,Quảng Bình,0.8226,neutral
+user_1_family,10,Sông Hương,Huế,0.8172,neutral
+user_2_adventure,1,Hang Va,Quảng Bình,0.91,neutral
+user_2_adventure,2,Hang Sơn Đoòng,Quảng Bình,0.8884,neutral
+user_2_adventure,3,"Núi Talung, núi Klu",Quảng Trị,0.7871,neutral
+user_2_adventure,4,Mũi Trèo,Quảng Trị,0.772,neutral
+user_2_adventure,5,Vườn Quốc gia Bạch Mã,Huế,0.7711,neutral
+user_2_adventure,6,Đảo Cồn Cỏ,Quảng Trị,0.7189,neutral
+user_2_adventure,7,Phong Nha,Quảng Bình,0.7071,neutral
+user_2_adventure,8,Sông Đakrông,Quảng Trị,0.6946,neutral
+user_2_adventure,9,Đầm Chuồn,Huế,0.6777,neutral
+user_2_adventure,10,Vũng Chùa - Đảo Yến,Quảng Bình,0.6401,neutral
+user_3_history,1,Mộ Đại Tướng Võ Nguyên Giáp,Quảng Bình,0.896,neutral
+user_3_history,2,Thành cổ Đồng Hới,Quảng Bình ,0.8926,neutral
+user_3_history,3,Lăng Tự Đức,Huế,0.8508,neutral
+user_3_history,4,Lăng Minh Mạng,Huế,0.8335,neutral
+user_3_history,5,Đại Nội Huế,Huế,0.8059,neutral
+user_3_history,6,Thánh địa La Vang,Quảng Trị,0.7844,neutral
+user_3_history,7,Nghĩa trang Trường Sơn,Quảng Trị,0.7804,neutral
+user_3_history,8,Thành cổ Quảng Trị,Quảng Trị,0.7654,neutral
+user_3_history,9,Bản Vân Kiều,Quảng Trị,0.7559,neutral
+user_3_history,10,Làng cổ Bích La,Quảng Trị,0.7536,neutral
+user_4_photo,1,Đầm Chuồn,Huế,0.8966,neutral
+user_4_photo,2,Vũng Chùa - Đảo Yến,Quảng Bình,0.8573,neutral
+user_4_photo,3,Đảo Cồn Cỏ,Quảng Trị,0.8455,neutral
+user_4_photo,4,Lăng Minh Mạng,Huế,0.8321,neutral
+user_4_photo,5,Biển Đá Nhảy,Quảng Bình,0.8299,neutral
+user_4_photo,6,Biển Cửa Việt,Quảng Trị,0.814,neutral
+user_4_photo,7,Lăng Cô,Huế,0.8068,neutral
+user_4_photo,8,Địa đạo Vịnh Mốc,Quảng Trị,0.8052,neutral
+user_4_photo,9,Cồn cát Quang Phú,Quảng Bình,0.7907,neutral
+user_4_photo,10,Lăng Tự Đức,Huế,0.7901,neutral
+user_5_nature,1,Đầm Chuồn,Huế,0.9072,neutral
+user_5_nature,2,Đảo Cồn Cỏ,Quảng Trị,0.8616,neutral
+user_5_nature,3,Vũng Chùa - Đảo Yến,Quảng Bình,0.8591,neutral
+user_5_nature,4,Vườn Quốc gia Bạch Mã,Huế,0.8451,neutral
+user_5_nature,5,Phong Nha,Quảng Bình,0.837,neutral
+user_5_nature,6,Mũi Trèo,Quảng Trị,0.8183,neutral
+user_5_nature,7,Lăng Cô,Huế,0.8105,neutral
+user_5_nature,8,Biển Cửa Việt,Quảng Trị,0.8101,neutral
+user_5_nature,9,Địa đạo Vịnh Mốc,Quảng Trị,0.8067,neutral
+user_5_nature,10,Biển Đá Nhảy,Quảng Bình,0.8057,neutral
