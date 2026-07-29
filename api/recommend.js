@@ -1,5 +1,5 @@
-const { recommend } = require("../assets/js/recommendation");
-const destinations = require("../input/stage1/stage1_dataset.json");
+const { recommend } = require("./recommendation");
+const destinations = require("./stage1_dataset.json");
 
 function sendJSON(res, status, data) {
     res.statusCode = status;
