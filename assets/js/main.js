@@ -274,7 +274,6 @@ document.getElementById("prefsForm").addEventListener("submit", (e) => {
     });
     data.months = Array.from(selectedMonths).sort((a, b) => a - b);
 
-    // CẦN THÊM — gửi data cho server
     fetch("/api/recommend", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -282,55 +281,17 @@ document.getElementById("prefsForm").addEventListener("submit", (e) => {
     })
         .then((res) => res.json())
         .then((results) => {
-            // loadData(results);
+            if (results.error) {
+                alert("Lỗi server: " + results.error);
+                return;
+            }
             displayResults(results);
+        })
+        .catch((err) => {
+            console.error("Fetch error:", err);
+            alert("Không kết nối được server: " + err.message);
         });
 });
-
-function recommend(userPrefs, dataset) {
-    const prefs = {};
-    ALL_FEATURES.forEach((f) => {
-        if (f !== "month_score" && f in userPrefs) {
-            prefs[f] = parseFloat(userPrefs[f]);
-        }
-    });
-
-    const topK = parseInt(userPrefs.topK || 10);
-    const monthNumbers = userPrefs.months || [];
-    const travelMonths = monthNumbers.map((m) => MONTH_NAMES[m - 1]);
-
-    const scored = [];
-    for (const place of dataset) {
-        let bestScore = 0;
-        let bestMonthScore = 0.5;
-
-        if (travelMonths.length === 0) {
-            bestScore = cosineSim13(prefs, place, null);
-            bestMonthScore = 0.5;
-        } else {
-            for (const tm of travelMonths) {
-                const score = cosineSim13(prefs, place, tm);
-                const ms = encodeMonth(place["best_months"], tm);
-                if (score > bestScore) {
-                    bestScore = score;
-                    bestMonthScore = ms;
-                }
-            }
-        }
-
-        scored.push({
-            place: place["place"],
-            province: place["province"],
-            score: bestScore,
-            month_score: bestMonthScore,
-        });
-    }
-
-    scored.sort((a, b) => b.score - a.score);
-    const top = scored.slice(0, topK);
-
-    return top;
-}
 
 function displayResults(results) {
     const parent = document.querySelector(".destinations__grid");
