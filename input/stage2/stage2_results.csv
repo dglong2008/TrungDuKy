@@ -1,11 +1,101 @@
 ﻿profile,rank,place,province,cosine_score,month_match
-user_1,1,đầm chuồn,Huế,0.8297,neutral
-user_1,2,biển cửa việt,Quảng Trị,0.7023,neutral
-user_1,3,đảo cồn cỏ,Quảng Trị,0.6971,neutral
-user_1,4,lăng cô,Huế,0.67,neutral
-user_1,5,địa đạo vịnh mốc,Quảng Trị,0.6698,neutral
-user_1,6,biển nhật lệ,Quảng Bình,0.6633,neutral
-user_1,7,mũi trèo,Quảng Trị,0.6602,neutral
-user_1,8,vũng chùa - đảo yến,Quảng Bình,0.6488,neutral
-user_1,9,cầu qua phá tam giang,Huế,0.6433,neutral
-user_1,10,cồn cát quang phú,Quảng Bình,0.6432,neutral
+user_1,1,Đầm Chuồn,Huế,0.9062,neutral
+user_1,2,Cầu qua Phá Tam Giang,Huế,0.8829,neutral
+user_1,3,Biển Cửa Việt,Quảng Trị,0.8809,neutral
+user_1,4,Lăng Cô,Huế,0.8702,neutral
+user_1,5,Vũng Chùa - Đảo Yến,Quảng Bình,0.8645,neutral
+user_1,6,Biển Nhật Lệ,Quảng Bình,0.8593,neutral
+user_1,7,Địa đạo Vịnh Mốc,Quảng Trị,0.8444,neutral
+user_1,8,Sông Hương,Huế,0.8442,neutral
+user_1,9,Nhà vườn An Hiên,Huế,0.8413,neutral
+user_1,10,Đảo Cồn Cỏ,Quảng Trị,0.8406,neutral
+user_2,1,Hang Sơn Đoòng,Quảng Bình,0.9309,neutral
+user_2,2,Hang Va,Quảng Bình,0.9175,neutral
+user_2,3,Vườn Quốc gia Bạch Mã,Huế,0.7575,neutral
+user_2,4,Phong Nha,Quảng Bình,0.7372,neutral
+user_2,5,"Núi Talung, núi Klu",Quảng Trị,0.7043,neutral
+user_2,6,Mũi Trèo,Quảng Trị,0.701,neutral
+user_2,7,Đầm Chuồn,Huế,0.6599,neutral
+user_2,8,Sông Đakrông,Quảng Trị,0.6469,neutral
+user_2,9,Đảo Cồn Cỏ,Quảng Trị,0.6367,neutral
+user_2,10,Núi Ngự Bình,Huế,0.5958,neutral
+user_3,1,Thành cổ Đồng Hới,Quảng Bình ,0.9258,neutral
+user_3,2,Mộ Đại Tướng Võ Nguyên Giáp,Quảng Bình,0.9233,neutral
+user_3,3,Lăng Minh Mạng,Huế,0.8836,neutral
+user_3,4,Lăng Tự Đức,Huế,0.8706,neutral
+user_3,5,Nghĩa trang Trường Sơn,Quảng Trị,0.8403,neutral
+user_3,6,Thánh địa La Vang,Quảng Trị,0.8374,neutral
+user_3,7,Thành cổ Quảng Trị,Quảng Trị,0.8374,neutral
+user_3,8,Đền thờ Liễu Hạnh,Quảng Bình,0.8117,neutral
+user_3,9,Bản Vân Kiều,Quảng Trị,0.8044,neutral
+user_3,10,Làng nón Phú Cam,Huế,0.8016,neutral
+user_4,1,Chợ Đông Hà,Quảng Trị,0.8686,neutral
+user_4,2,Đại Nội Huế,Huế,0.8634,neutral
+user_4,3,Làng hương Thủy Xuân,Huế,0.85,neutral
+user_4,4,Sông Hương,Huế,0.8467,neutral
+user_4,5,Chợ Đông Ba,Huế,0.8453,neutral
+user_4,6,Thánh địa La Vang,Quảng Trị,0.8372,neutral
+user_4,7,Chợ phiên Cam Lộ,Quảng Trị,0.834,neutral
+user_4,8,Chùa Thiên Mụ,Huế,0.8339,neutral
+user_4,9,Làng cổ Bích La,Quảng Trị,0.8316,neutral
+user_4,10,Bản Vân Kiều,Quảng Trị,0.8261,neutral
+user_5,1,Mũi Trèo,Quảng Trị,0.791,neutral
+user_5,2,Đầm Chuồn,Huế,0.7851,neutral
+user_5,3,Đảo Cồn Cỏ,Quảng Trị,0.779,neutral
+user_5,4,Sông Đakrông,Quảng Trị,0.7751,neutral
+user_5,5,Vườn Quốc gia Bạch Mã,Huế,0.7672,neutral
+user_5,6,Vũng Chùa - Đảo Yến,Quảng Bình,0.7637,neutral
+user_5,7,Núi Ngự Bình,Huế,0.754,neutral
+user_5,8,Mộ Đại Tướng Võ Nguyên Giáp,Quảng Bình,0.7518,neutral
+user_5,9,Biển Đá Nhảy,Quảng Bình,0.7496,neutral
+user_5,10,Hang Va,Quảng Bình,0.7461,neutral
+user_6,1,Đầm Chuồn,Huế,0.817,neutral
+user_6,2,Mộ Đại Tướng Võ Nguyên Giáp,Quảng Bình,0.7288,neutral
+user_6,3,Lăng Minh Mạng,Huế,0.6898,neutral
+user_6,4,Đảo Cồn Cỏ,Quảng Trị,0.6895,neutral
+user_6,5,Cầu qua Phá Tam Giang,Huế,0.6857,neutral
+user_6,6,Biển Cửa Việt,Quảng Trị,0.6833,neutral
+user_6,7,Vũng Chùa - Đảo Yến,Quảng Bình,0.6814,neutral
+user_6,8,Nhà vườn An Hiên,Huế,0.6588,neutral
+user_6,9,Lăng Tự Đức,Huế,0.6578,neutral
+user_6,10,Phong Nha,Quảng Bình,0.653,neutral
+user_7,1,"Núi Talung, núi Klu",Quảng Trị,0.874,neutral
+user_7,2,Mũi Trèo,Quảng Trị,0.8458,neutral
+user_7,3,Sông Đakrông,Quảng Trị,0.8212,neutral
+user_7,4,Đảo Cồn Cỏ,Quảng Trị,0.8035,neutral
+user_7,5,Hang Va,Quảng Bình,0.7856,neutral
+user_7,6,Núi Ngự Bình,Huế,0.7709,neutral
+user_7,7,Hang Sơn Đoòng,Quảng Bình,0.7615,neutral
+user_7,8,Bản Vân Kiều,Quảng Trị,0.7582,neutral
+user_7,9,Vườn Quốc gia Bạch Mã,Huế,0.7517,neutral
+user_7,10,Cầu qua Phá Tam Giang,Huế,0.7424,neutral
+user_8,1,Thành cổ Đồng Hới,Quảng Bình ,0.9451,neutral
+user_8,2,Mộ Đại Tướng Võ Nguyên Giáp,Quảng Bình,0.9381,neutral
+user_8,3,Lăng Tự Đức,Huế,0.9085,neutral
+user_8,4,Lăng Minh Mạng,Huế,0.8947,neutral
+user_8,5,Thánh địa La Vang,Quảng Trị,0.882,neutral
+user_8,6,Nghĩa trang Trường Sơn,Quảng Trị,0.8757,neutral
+user_8,7,Làng cổ Bích La,Quảng Trị,0.8691,neutral
+user_8,8,Đền thờ Liễu Hạnh,Quảng Bình,0.8668,neutral
+user_8,9,Đại Nội Huế,Huế,0.8577,neutral
+user_8,10,Nhà vườn An Hiên,Huế,0.8568,neutral
+user_9,1,Mộ Đại Tướng Võ Nguyên Giáp,Quảng Bình,0.8381,neutral
+user_9,2,Thành cổ Đồng Hới,Quảng Bình ,0.8083,neutral
+user_9,3,Bản Vân Kiều,Quảng Trị,0.7957,neutral
+user_9,4,Làng cổ Bích La,Quảng Trị,0.7825,neutral
+user_9,5,Sông Đakrông,Quảng Trị,0.7701,neutral
+user_9,6,"Núi Talung, núi Klu",Quảng Trị,0.7657,neutral
+user_9,7,Đền thờ Liễu Hạnh,Quảng Bình,0.7592,neutral
+user_9,8,Núi Ngự Bình,Huế,0.7368,neutral
+user_9,9,Lăng Minh Mạng,Huế,0.7335,neutral
+user_9,10,Thánh địa La Vang,Quảng Trị,0.7319,neutral
+user_10,1,Mộ Đại Tướng Võ Nguyên Giáp,Quảng Bình,0.9027,neutral
+user_10,2,Lăng Minh Mạng,Huế,0.8827,neutral
+user_10,3,Lăng Tự Đức,Huế,0.8657,neutral
+user_10,4,Thành cổ Đồng Hới,Quảng Bình ,0.8529,neutral
+user_10,5,Đầm Chuồn,Huế,0.839,neutral
+user_10,6,Thánh địa La Vang,Quảng Trị,0.8247,neutral
+user_10,7,Đại Nội Huế,Huế,0.8222,neutral
+user_10,8,Sông Hương,Huế,0.8095,neutral
+user_10,9,Đền thờ Liễu Hạnh,Quảng Bình,0.8083,neutral
+user_10,10,Làng hương Thủy Xuân,Huế,0.8057,neutral
