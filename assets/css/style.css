@@ -37,6 +37,10 @@ body {
   align-items: center;
 }
 
+.destinations__score {
+  margin-left: auto;
+}
+
 .destinations__title {
   display: flex;
   flex-direction: column;

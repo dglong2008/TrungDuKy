@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "dev": "sass --watch docs/scss:docs/css --source-map"
+        "dev": "sass --watch assets/scss:assets/css --source-map"
     },
     "devDependencies": {
         "sass": "^1.77.0"

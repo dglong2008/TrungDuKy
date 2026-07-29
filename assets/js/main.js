@@ -331,6 +331,87 @@ function displayResults(results) {
 
     console.log(results);
 
+    for (const index of results) {
+        const des = results[index];
+
+        const bootstrapCol = document.createElement("div");
+        bootstrapCol.className = "col";
+
+        const card = document.createElement("div");
+        card.className = "destinations__card";
+        bootstrapCol.appendChild(card);
+
+        const headings = document.createElement("div");
+        headings.className = "destinations__headings";
+
+        const img = document.createElement("img");
+        img.className = "destinations__img";
+        img.src =
+            "https://nld.mediacdn.vn/thumb_w/698/291774122806476800/2024/11/18/dong-phong-nha-ke-bang-dep-den-choang-ngop-17319168370561406931222.jpg";
+
+        const title = document.createElement("div");
+        title.className = "destinations__title";
+        title.innerHTML = `<span>${des["place"]}</span><p>${des["province"]}</p>`;
+        headings.append(img, title);
+
+        const score = document.createElement("div");
+        score.className = "destinations__score";
+        score.innerHTML = `Match: ${Math.round(des.score * 100)}%`;
+        headings.append(score);
+
+        const content = document.createElement("div");
+        content.className = "destinations__content";
+        for (let key of keys) {
+            const feature = document.createElement("div");
+            feature.className = "feature";
+
+            const left = document.createElement("div");
+            left.className = "left";
+            left.innerHTML = `${key}`;
+
+            const mid = document.createElement("div");
+            mid.className = "mid";
+            const bar = document.createElement("div");
+            bar.className = "bar";
+            const progress = document.createElement("div");
+            progress.className = "progress";
+            let points = 100 * (1 - des[key]);
+            if (roundTo(des[key] * 100, 0) == 0) points = 150;
+
+            setTimeout(() => {
+                progress.style.transform = `translateX(-${points}%)`;
+            }, 10);
+            bar.appendChild(progress);
+            mid.appendChild(bar);
+
+            const right = document.createElement("div");
+            right.className = "right";
+            right.innerHTML = `${roundTo(des[key] * 100, 0)}`;
+
+            feature.append(left, mid, right);
+
+            content.appendChild(feature);
+        }
+
+        const months = document.createElement("div");
+        months.className = "destinations__best-months";
+        const allMonthsStr = "jan-feb-mar-apr-may-jun-jul-aug-sep-oct-nov-dec";
+        const tmpMonth =
+            des["best_months"] === "all-year"
+                ? allMonthsStr
+                : des["best_months"];
+        const months_input = tmpMonth.split("-");
+        for (let month of months_input) {
+            const monthElement = document.createElement("div");
+            monthElement.className = "month";
+            monthElement.innerHTML = `${monthMap[month]}`;
+            months.appendChild(monthElement);
+        }
+
+        card.append(headings, content, months);
+        parent.appendChild(bootstrapCol);
+    }
+
     for (const des of results) {
         const bootstrapCol = document.createElement("div");
         bootstrapCol.className = "col";
@@ -351,11 +432,6 @@ function displayResults(results) {
         title.className = "destinations__title";
         title.innerHTML = `<span>${des.place}</span><p>${des.province}</p>`;
         headings.append(img, title);
-
-        const score = document.createElement("div");
-        score.className = "destinations__score";
-        score.innerHTML = `Match: ${Math.round(des.score * 100)}%`;
-        headings.append(score);
 
         card.append(headings);
         parent.appendChild(bootstrapCol);
