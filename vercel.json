@@ -1,5 +1,8 @@
 {
     "builds": [
-        { "src": "api/recommend.js", "use": "@vercel/node" }
+        { "src": "api/recommend.js", "use": "@vercel/node" },
+        { "src": "index.html", "use": "@vercel/static" },
+        { "src": "assets/**", "use": "@vercel/static" },
+        { "src": "input/**", "use": "@vercel/static" }
     ]
 }
