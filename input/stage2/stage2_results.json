@@ -5,63 +5,63 @@
     "top_k": 10,
     "results": [
       {
-        "place": "đầm chuồn",
+        "place": "Đầm Chuồn",
         "province": "Huế",
-        "score": 0.8297,
+        "score": 0.8582,
         "month_score": 0.5
       },
       {
-        "place": "biển cửa việt",
+        "place": "Biển Cửa Việt",
         "province": "Quảng Trị",
-        "score": 0.7023,
+        "score": 0.7339,
         "month_score": 0.5
       },
       {
-        "place": "đảo cồn cỏ",
+        "place": "Đảo Cồn Cỏ",
         "province": "Quảng Trị",
-        "score": 0.6971,
+        "score": 0.7187,
         "month_score": 0.5
       },
       {
-        "place": "lăng cô",
+        "place": "Lăng Cô",
         "province": "Huế",
-        "score": 0.67,
+        "score": 0.6924,
         "month_score": 0.5
       },
       {
-        "place": "địa đạo vịnh mốc",
-        "province": "Quảng Trị",
-        "score": 0.6698,
-        "month_score": 0.5
-      },
-      {
-        "place": "biển nhật lệ",
+        "place": "Biển Nhật Lệ",
         "province": "Quảng Bình",
-        "score": 0.6633,
+        "score": 0.6893,
         "month_score": 0.5
       },
       {
-        "place": "mũi trèo",
+        "place": "Địa đạo Vịnh Mốc",
         "province": "Quảng Trị",
-        "score": 0.6602,
+        "score": 0.6797,
         "month_score": 0.5
       },
       {
-        "place": "vũng chùa - đảo yến",
-        "province": "Quảng Bình",
-        "score": 0.6488,
-        "month_score": 0.5
-      },
-      {
-        "place": "cầu qua phá tam giang",
+        "place": "Cầu qua Phá Tam Giang",
         "province": "Huế",
-        "score": 0.6433,
+        "score": 0.6751,
         "month_score": 0.5
       },
       {
-        "place": "cồn cát quang phú",
+        "place": "Mũi Trèo",
+        "province": "Quảng Trị",
+        "score": 0.6668,
+        "month_score": 0.5
+      },
+      {
+        "place": "Vũng Chùa - Đảo Yến",
         "province": "Quảng Bình",
-        "score": 0.6432,
+        "score": 0.6524,
+        "month_score": 0.5
+      },
+      {
+        "place": "Cồn cát Quang Phú",
+        "province": "Quảng Bình",
+        "score": 0.6494,
         "month_score": 0.5
       }
     ]
