@@ -273,5 +273,14 @@ document.getElementById("prefsForm").addEventListener("submit", (e) => {
     });
     data.months = Array.from(selectedMonths).sort((a, b) => a - b);
 
-    console.log(data);
+    // CẦN THÊM — gửi data cho server
+    fetch("http://localhost:3000/api/recommend", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    })
+        .then((res) => res.json())
+        .then((results) => {
+            displayResults(results);
+        });
 });
