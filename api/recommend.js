@@ -1,25 +1,31 @@
 const { recommend } = require("../assets/js/recommendation");
 const destinations = require("../input/stage1/stage1_dataset.json");
 
+function sendJSON(res, status, data) {
+    res.statusCode = status;
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(data));
+}
+
 module.exports = (req, res) => {
+    if (req.method !== "POST") {
+        sendJSON(res, 405, { error: "Method not allowed" });
+        return;
+    }
+
+    let userPrefs = req.body;
+    if (typeof userPrefs === "string") {
+        userPrefs = JSON.parse(userPrefs);
+    }
+    if (!userPrefs) {
+        sendJSON(res, 400, { error: "No body provided" });
+        return;
+    }
+
     try {
-        if (req.method !== "POST") {
-            res.status(405).json({ error: "Method not allowed" });
-            return;
-        }
-
-        let userPrefs = req.body;
-        if (typeof userPrefs === "string") {
-            userPrefs = JSON.parse(userPrefs);
-        }
-        if (!userPrefs) {
-            res.status(400).json({ error: "No body provided" });
-            return;
-        }
-
         const results = recommend(userPrefs, destinations);
-        res.json(results);
+        sendJSON(res, 200, results);
     } catch (err) {
-        res.status(500).json({ error: err.message, stack: err.stack });
+        sendJSON(res, 500, { error: err.message });
     }
 };

@@ -1,12 +1,9 @@
 {
-    "main": "api/recommend.js",
     "scripts": {
         "dev": "sass --watch docs/scss:docs/css --source-map",
         "build": "sass assets/css/style.css:assets/css/style.min.css --style=compressed --no-source-map"
     },
     "dependencies": {
-        "cors": "^2.8.6",
-        "express": "^5.2.1",
         "sass": "^1.77.0"
     }
 }
