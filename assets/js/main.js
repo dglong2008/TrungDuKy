@@ -488,10 +488,6 @@ function displayResults(results) {
                 parent.appendChild(bootstrapCol);
             }
         });
-
-    setTimeout(() => {
-        renderItinerary();
-    }, 50);
 }
 
 const destinationsGrid = document.querySelector(".destinations__grid");
@@ -561,3 +557,7 @@ function renderItinerary() {
     });
 }
 destinationsGrid.addEventListener("change", renderItinerary);
+
+setTimeout(() => {
+    renderItinerary();
+}, 5000);
