@@ -1,0 +1,351 @@
+&:root {
+  --bg: #eeebe0;
+  --card: #ffffff;
+  --ink: #1f2a1c;
+  --label: #2c4a63;
+  --green-deep: #46612f;
+  --green-mid: #5c7a41;
+  --track: #e6e9dc;
+  --track-shadow: #d9ddca;
+  --badge-off: #e7ebdd;
+  --badge-off-ink: #7c8a6d;
+  --ring: rgba(70, 97, 47, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: "Inter", sans-serif;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+form.card {
+  width: 100%;
+  max-width: 560px;
+  background: var(--card);
+  padding: 32px 32px 28px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(31, 42, 28, 0.06);
+}
+
+.sidebar-sticky {
+  border-radius: 35px;
+  position: sticky;
+  top: 30px;
+  left: 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 60px);
+}
+
+.sidebar-sticky::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-sticky::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.avatar img {
+  object-fit: cover;
+}
+
+.title-group h1 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 2px;
+  letter-spacing: -0.2px;
+}
+.title-group p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--label);
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+#sliders {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.field label {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--label);
+  white-space: nowrap;
+}
+.field .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.slider-wrap {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(to right, var(--green-deep) 0%, var(--green-deep) var(--val, 50%), var(--track) var(--val, 50%), var(--track) 100%);
+  outline: none;
+  cursor: pointer;
+  box-shadow: inset 0 1px 2px var(--track-shadow);
+  transition: box-shadow 0.15s ease;
+}
+input[type=range]:focus-visible {
+  box-shadow: 0 0 0 4px var(--ring);
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--green-deep);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  margin-top: 0;
+}
+input[type=range]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--green-deep);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+input[type=range]::-moz-range-track {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--track);
+}
+input[type=range]::-moz-range-progress {
+  height: 10px;
+  border-radius: 999px;
+  background: var(--green-deep);
+}
+
+.value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--label);
+  font-size: 14.5px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--badge-off);
+  margin: 22px 0 18px;
+}
+
+.month-heading {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--label);
+  margin: 0 0 12px;
+}
+.month-heading span {
+  font-weight: 500;
+  color: var(--badge-off-ink);
+  font-size: 12.5px;
+  display: block;
+  margin-top: 2px;
+}
+
+.months {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.month-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--badge-off);
+  color: var(--badge-off-ink);
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.month-btn:hover {
+  background: #dbe2cc;
+}
+.month-btn:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.month-btn.active {
+  background: var(--green-mid);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(70, 97, 47, 0.35);
+  transform: translateY(-1px);
+}
+
+.trip-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.trip-field label {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--label);
+  margin-bottom: 8px;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  background: var(--badge-off);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.stepper button {
+  border: none;
+  background: transparent;
+  color: var(--green-deep);
+  font-size: 18px;
+  font-weight: 700;
+  width: 38px;
+  height: 40px;
+  cursor: pointer;
+  font-family: "Quicksand", sans-serif;
+}
+
+.stepper button:hover {
+  background: #dbe2cc;
+}
+
+.stepper input {
+  border: none;
+  background: transparent;
+  text-align: center;
+  width: 100%;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.stepper input::-webkit-outer-spin-button,
+.stepper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stepper input:focus-visible {
+  outline: none;
+}
+
+button.submit {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--green-deep);
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+button.submit:hover {
+  background: #3c5327;
+}
+button.submit:active {
+  transform: scale(0.99);
+}
+
+.status {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--label);
+  text-align: center;
+  min-height: 18px;
+}
+
+@media (max-width: 420px) {
+  form.card {
+    padding: 26px 20px 22px;
+    border-radius: 22px;
+  }
+  .field {
+    grid-template-columns: 64px 1fr 34px;
+    gap: 10px;
+  }
+  .field label {
+    font-size: 13px;
+  }
+  .month-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+}
+
+/*# sourceMappingURL=rangeslider.css.map */
