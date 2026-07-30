@@ -491,7 +491,7 @@ function displayResults(results) {
 
     setTimeout(() => {
         renderItinerary();
-    }, 20);
+    }, 50);
 }
 
 const destinationsGrid = document.querySelector(".destinations__grid");
