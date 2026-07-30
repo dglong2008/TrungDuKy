@@ -464,12 +464,23 @@
   content: "";
   position: absolute;
   top: 22px;
-  left: 10px; /* centered under the 22px circle */
+  left: 10px;
   width: 2px;
   bottom: -4px;
-  background: rgba(70, 97, 47, 0.6);
+  /* dashed segments moving downward */
+  background: repeating-linear-gradient(to bottom, rgba(70, 97, 47, 0.8) 0px, rgba(70, 97, 47, 0.8) 8px, transparent 8px, transparent 16px);
+  background-size: 2px 32px; /* one repeat unit = 32px */
+  animation: flow-down 0.8s linear infinite;
 }
 
+@keyframes flow-down {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 32px;
+  } /* exactly one repeat unit */
+}
 /* time label, sitting to the LEFT of the line, in the gap */
 .stop__time {
   display: none; /* hidden by default; only shown on stops that have a line after them */
