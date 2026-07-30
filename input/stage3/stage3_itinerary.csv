@@ -1,11 +1,11 @@
 ﻿profile,day,stop_order,place,province,leg_km,time_travel,day_total_km,time_travel_total
-user_1,1,1,Lăng Cô,Huế,0.0,0.0,0.0,0.0
-user_1,2,1,Cầu qua Phá Tam Giang,Huế,10.1,0.3,9.4,0.2
-user_1,2,2,Đầm Chuồn,Huế,0.0,0.0,9.4,0.2
-user_1,3,1,Đảo Cồn Cỏ,Quảng Trị,27.3,0.7,46.6,1.2
-user_1,3,2,Mũi Trèo,Quảng Trị,1.7,0.0,46.6,1.2
-user_1,3,3,Địa đạo Vịnh Mốc,Quảng Trị,21.1,0.5,46.6,1.2
-user_1,3,4,Biển Cửa Việt,Quảng Trị,0.0,0.0,46.6,1.2
-user_1,4,1,Cồn cát Quang Phú,Quảng Bình,4.5,0.1,4.2,0.1
-user_1,4,2,Biển Nhật Lệ,Quảng Bình,0.0,0.0,4.2,0.1
-user_1,5,1,Vũng Chùa - Đảo Yến,Quảng Bình,0.0,0.0,0.0,0.0
+user_1,1,1,Vũng Chùa - Đảo Yến,Quảng Bình,49.6,1.2,50.3,1.3
+user_1,1,2,Cồn cát Quang Phú,Quảng Bình,4.5,0.1,50.3,1.3
+user_1,1,3,Biển Nhật Lệ,Quảng Bình,0.0,0.0,50.3,1.3
+user_1,2,1,Mũi Trèo,Quảng Trị,1.7,0.0,21.2,0.5
+user_1,2,2,Địa đạo Vịnh Mốc,Quảng Trị,21.1,0.5,21.2,0.5
+user_1,2,3,Biển Cửa Việt,Quảng Trị,0.0,0.0,21.2,0.5
+user_1,3,1,Đảo Cồn Cỏ,Quảng Trị,0.0,0.0,0.0,0.0
+user_1,4,1,Cầu qua Phá Tam Giang,Huế,10.1,0.3,9.4,0.2
+user_1,4,2,Đầm Chuồn,Huế,0.0,0.0,9.4,0.2
+user_1,5,1,Lăng Cô,Huế,0.0,0.0,0.0,0.0
