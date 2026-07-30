@@ -1,0 +1,12 @@
+﻿profile_name,k,prediction_count,matched_count,match_percentage,precision_at_k,recall_at_k,matched_places,missed_reference_places
+user_1,10,10,6,60.0,0.6,0.6,Đầm Chuồn | Biển Cửa Việt | Lăng Cô | Vũng Chùa - Đảo Yến | Biển Nhật Lệ | Sông Hương,Phong Nha | Chùa Thiên Mụ | Biển Đá Nhảy | Đại Nội Huế
+user_10,10,10,5,50.0,0.5,0.5,Lăng Minh Mạng | Lăng Tự Đức | Đầm Chuồn | Đại Nội Huế | Sông Hương,Phong Nha | Lăng Cô | Chùa Thiên Mụ | Vũng Chùa - Đảo Yến | Địa đạo Vịnh Mốc
+user_2,10,10,8,80.0,0.8,0.8,"Hang Sơn Đoòng | Hang Va | Vườn Quốc gia Bạch Mã | Phong Nha | Núi Talung, núi Klu | Mũi Trèo | Sông Đakrông | Đảo Cồn Cỏ",Cồn cát Quang Phú | Địa đạo Vịnh Mốc
+user_3,10,10,5,50.0,0.5,0.5,Mộ Đại Tướng Võ Nguyên Giáp | Lăng Minh Mạng | Lăng Tự Đức | Nghĩa trang Trường Sơn | Thành cổ Quảng Trị,Đại Nội Huế | Địa đạo Vịnh Mốc | Chùa Thiên Mụ | Quảng Bình Quan | Khe Sanh
+user_4,10,10,4,40.0,0.4,0.4,Chợ Đông Hà | Chợ Đông Ba | Chợ phiên Cam Lộ | Bản Vân Kiều,Đầm Chuồn | Lăng Cô | Biển Nhật Lệ | Biển Cửa Việt | Đảo Cồn Cỏ | Cửa khẩu Lao Bảo
+user_5,10,10,7,70.0,0.7,0.7,Mũi Trèo | Đầm Chuồn | Đảo Cồn Cỏ | Sông Đakrông | Vườn Quốc gia Bạch Mã | Núi Ngự Bình | Biển Đá Nhảy,Cầu qua Phá Tam Giang | Đồi Vọng Cảnh | Cồn cát Quang Phú
+user_6,10,10,4,40.0,0.4,0.4,Đầm Chuồn | Lăng Minh Mạng | Nhà vườn An Hiên | Lăng Tự Đức,Lăng Cô | Sông Hương | Đồi Vọng Cảnh | Biển Nhật Lệ | Chùa Thiên Mụ | Biển Đá Nhảy
+user_7,10,10,6,60.0,0.6,0.6,"Núi Talung, núi Klu | Mũi Trèo | Sông Đakrông | Núi Ngự Bình | Bản Vân Kiều | Cầu qua Phá Tam Giang",Phong Nha | Cồn cát Quang Phú | Biển Đá Nhảy | Địa đạo Vịnh Mốc
+user_8,10,10,5,50.0,0.5,0.5,Mộ Đại Tướng Võ Nguyên Giáp | Lăng Tự Đức | Lăng Minh Mạng | Thánh địa La Vang | Đại Nội Huế,Chùa Thiên Mụ | Phong Nha | Thành cổ Quảng Trị | Địa đạo Vịnh Mốc | Quảng Bình Quan
+user_9,10,10,3,30.0,0.3,0.3,Bản Vân Kiều | Làng cổ Bích La | Sông Đakrông,Chợ phiên Cam Lộ | Làng nón Phú Cam | Làng hương Thủy Xuân | Đầm Chuồn | Nhà vườn An Hiên | Cửa khẩu Lao Bảo | Chợ Đông Ba
+MACRO_AVERAGE,10,,,53.0,0.53,0.53,,
