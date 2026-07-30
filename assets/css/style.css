@@ -56,7 +56,7 @@
 }
 
 .destinations__card.top {
-  border: 2px solid #4a5d3a;
+  border: 2px solid #d4af37;
   box-shadow: 0 4px 20px rgba(74, 93, 58, 0.25);
   position: relative;
   transform: scale(1.02);
@@ -67,8 +67,8 @@
   position: absolute;
   top: -12px;
   left: 16px;
-  background: #4a5d3a;
-  color: white;
+  background: #d4af37;
+  color: #2f3a22;
   font-size: 12px;
   font-weight: 600;
   padding: 4px 12px;
@@ -113,8 +113,8 @@
 }
 
 .destinations__img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
 }

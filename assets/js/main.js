@@ -1,5 +1,6 @@
 // const { buildItinerary } = require("./recommendation");
 import { buildItinerary } from "./itinerary.js";
+import { destinations as destinationsImages } from "./data.js";
 const userPreferences = document.querySelector("#submit-preferences");
 const formPreferences = document.querySelector("#form-preferences");
 
@@ -236,7 +237,7 @@ function wireStepper(inputId, minusId, plusId, min, max) {
     });
 }
 wireStepper("days", "daysMinus", "daysPlus", 1, 30);
-wireStepper("topK", "kMinus", "kPlus", 1, 40);
+wireStepper("topK", "kMinus", "kPlus", 1, 42);
 
 // new: score a destination against the user's slider preferences + month overlap
 function scoreDestination(dest, userPrefs, userMonths) {
@@ -392,16 +393,18 @@ async function displayResults(results) {
 
                 const card = document.createElement("div");
                 card.className = "destinations__card";
-                if (index < 3) card.classList.add("emphasize");
+                if (index < 3) {
+                    if (index === "0") card.classList.add("top");
+                    else card.classList.add("emphasize");
+                }
                 bootstrapCol.appendChild(card);
 
                 const headings = document.createElement("div");
                 headings.className = "destinations__headings";
-
+                console.log(des.place);
                 const img = document.createElement("img");
                 img.className = "destinations__img";
-                img.src =
-                    "https://nld.mediacdn.vn/thumb_w/698/291774122806476800/2024/11/18/dong-phong-nha-ke-bang-dep-den-choang-ngop-17319168370561406931222.jpg";
+                img.src = `./assets/sources/img/${destinationsImages[des.place].image}`;
 
                 const title = document.createElement("div");
                 title.className = "destinations__title";
