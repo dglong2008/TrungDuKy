@@ -560,4 +560,4 @@ destinationsGrid.addEventListener("change", renderItinerary);
 
 setTimeout(() => {
     renderItinerary();
-}, 5000);
+}, 2500);
