@@ -53,6 +53,27 @@
     letter-spacing: 0.5px;
 }
 
+.destinations__card.top {
+    border: 2px solid #4a5d3a;
+    box-shadow: 0 4px 20px rgba(74, 93, 58, 0.25);
+    position: relative;
+    transform: scale(1.02);
+}
+
+.destinations__card.top::before {
+    content: "★ Top match";
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: #4a5d3a;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+}
+
 .destinations__showing {
     margin-bottom: 20px;
     font-weight: bold;
@@ -413,4 +434,83 @@
 .show-more-btn:focus-visible {
     outline: 2px solid #4a5d3a;
     outline-offset: 3px;
+}
+
+// Timeline
+.day-card__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.stop {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: relative;
+    padding-bottom: 22px;
+}
+
+.stop:last-child {
+    padding-bottom: 0;
+}
+
+.stop__index {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--olive, #4a5d3a);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* connecting line */
+.stop:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 10px; /* centered under the 22px circle */
+    width: 2px;
+    bottom: -4px;
+    background: rgb(70 97 47 / 60%);
+}
+
+/* time label, sitting to the LEFT of the line, in the gap */
+.stop__time {
+    display: none; /* hidden by default; only shown on stops that have a line after them */
+    position: absolute;
+    right: -8px;
+    bottom: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted, #8a8f7c);
+}
+
+.stop:not(:last-child) .stop__time {
+    display: block;
+}
+
+/* distance label, sitting to the LEFT of the line, in the gap */
+.distance__time {
+    display: none; /* hidden by default; only shown on distances that have a line after them */
+    position: absolute;
+    left: 16px;
+    bottom: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted, #8a8f7c);
+}
+
+.stop:not(:last-child) .distance__time {
+    display: block;
 }

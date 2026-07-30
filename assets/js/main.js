@@ -337,12 +337,12 @@ document.getElementById("prefsForm").addEventListener("submit", (e) => {
 //     });
 // }
 
-function displayResults(results) {
+async function displayResults(results) {
     const parent = document.querySelector(".destinations__grid");
     parent.innerHTML = "";
 
     const showing = document.querySelector(".destinations__showing");
-    showing.innerHTML = `Showing ${results.length} places`;
+    showing.innerHTML = `Showing ${results.length} ${results.length === 1 ? "place" : "places"} of 42 places`;
 
     const keys = [
         "adventure",
@@ -487,10 +487,15 @@ function displayResults(results) {
                 card.append(headings, content, footerWrapper);
                 parent.appendChild(bootstrapCol);
             }
+            renderItinerary();
         });
 }
 
 const destinationsGrid = document.querySelector(".destinations__grid");
+
+function convertToMin(hour) {
+    return roundTo(hour * 60, 0);
+}
 
 function renderItinerary() {
     const destinationsCheckboxes = document.querySelectorAll(".checkbox-input");
@@ -510,20 +515,22 @@ function renderItinerary() {
         }
     }
 
-    // console.log(destinationsList);
-    // console.log(globalNumberOfDays);
     const itinerary = buildItinerary(destinationsList, globalNumberOfDays);
-    let totalKms = 0;
-    for (let day of itinerary) totalKms += day["total_km"];
+    let totalKms = 0,
+        totalTime = 0;
+    for (let day of itinerary) {
+        totalKms += day["total_km"];
+        totalTime += day["time_travel_total"];
+    }
     const itinerarySummary = document.querySelector(".itinerary__summary");
-    console.log(totalKms);
-    itinerarySummary.innerHTML = `${destinationsList.length} selected · estimated ${totalKms} km`;
+    itinerarySummary.innerHTML = `${destinationsList.length} selected · estimated ${roundTo(totalKms, 2)} km and ${convertToMin(totalTime)} minutes, velocity: 40 km per hour`;
 
     const daysGrid = document.querySelector(".days-grid");
     daysGrid.innerHTML = "";
     itinerary.forEach((curData, index) => {
         // 1. Generate dynamic HTML for each stop in the day's route
-        console.log(curData);
+        const time = curData["time_travel"];
+        const dist = curData["legs_km"];
         const stopsHTML = curData.stops
             .map(
                 (stop, stopIdx) => `
@@ -535,6 +542,8 @@ function renderItinerary() {
                         ${stop.province || "Quảng Bình"} · ${stop.match || 0} match
                     </div>
                 </div>
+                <span class="stop__time">${stopIdx < time.length ? roundTo((dist[stopIdx] / 40) * 60, 0) : 0} minutes</span>
+                <span class="distance__time">${stopIdx < dist.length ? roundTo(dist[stopIdx], 2) : 0} km</span>
             </li>
         `,
             )
@@ -546,7 +555,7 @@ function renderItinerary() {
         dayCard.innerHTML = `
         <div class="day-card__header">
             <span class="day-card__title">Day ${curData.day}</span>
-            <span class="day-card__km">${curData.total_km} km</span>
+             <span class="day-card__km">${curData.total_km} km</span> 
         </div>
         <ul class="day-card__list">
             ${stopsHTML}
@@ -557,7 +566,3 @@ function renderItinerary() {
     });
 }
 destinationsGrid.addEventListener("change", renderItinerary);
-
-setTimeout(() => {
-    renderItinerary();
-}, 2500);
