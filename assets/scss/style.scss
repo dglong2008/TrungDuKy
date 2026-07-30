@@ -1,5 +1,12 @@
-body {
-    background-color: #f1f2e2;
+:root {
+    --cream: #f4f2ea;
+    --card: #ffffff;
+    --olive: #4a5d3a;
+    --olive-dark: #3a4a2d;
+    --terracotta: #c76b4a;
+    --text: #2f3626;
+    --muted: #8a8f7c;
+    --border: #e3e0d3;
 }
 
 #form-preferences {
@@ -25,6 +32,26 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+.destinations__card.emphasize {
+    border: 2px solid #4a5d3a;
+    box-shadow: 0 4px 20px rgba(74, 93, 58, 0.25);
+    position: relative;
+    transform: scale(1.02);
+}
+
+.destinations__card.emphasize::before {
+    content: "★ Top match";
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: #4a5d3a;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+}
 
 .destinations__showing {
     margin-bottom: 20px;
@@ -38,7 +65,16 @@ body {
 }
 
 .destinations__score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     margin-left: auto;
+
+    span {
+        font-weight: bold;
+        color: #345c1d;
+    }
 }
 
 .destinations__title {
@@ -123,4 +159,258 @@ body {
         font-size: 0.8rem;
         color: white;
     }
+}
+
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .checkbox-wrapper {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        cursor: pointer;
+        font-size: 15px;
+        color: #4a5d3a;
+        user-select: none;
+    }
+
+    /* Hide the real checkbox but keep it accessible */
+    .checkbox-input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    /* Custom box */
+    .checkbox-box {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #4a5d3a;
+        border-radius: 5px;
+        background: #f7f9f3;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+            background 0.15s ease,
+            border-color 0.15s ease,
+            transform 0.1s ease;
+        position: relative;
+        order: 2; /* box after label text, matches your screenshot layout */
+    }
+
+    /* Checkmark, drawn with a pseudo-element */
+    .checkbox-box::after {
+        content: "";
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg) scale(0);
+        transition: transform 0.15s ease;
+        margin-top: -2px;
+    }
+
+    /* Checked state */
+    .checkbox-input:checked + .checkbox-box {
+        background: #4a5d3a;
+        border-color: #4a5d3a;
+    }
+
+    .checkbox-input:checked + .checkbox-box::after {
+        transform: rotate(45deg) scale(1);
+    }
+
+    /* Focus ring for keyboard nav */
+    .checkbox-input:focus-visible + .checkbox-box {
+        box-shadow: 0 0 0 3px rgba(74, 93, 58, 0.3);
+    }
+
+    /* Slight press feedback */
+    .checkbox-wrapper:active .checkbox-box {
+        transform: scale(0.92);
+    }
+
+    input[type="checkbox"] {
+    }
+}
+
+// Itinerary
+.itinerary {
+    margin: 0 auto;
+    margin-top: 50px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px 28px;
+}
+
+.itinerary__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.itinerary__eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--olive);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.itinerary__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    color: var(--olive-dark);
+}
+
+.itinerary__summary {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.itinerary__days-control {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.itinerary__days-label {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.itinerary__days-input {
+    width: 56px;
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--olive-dark);
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 640px) {
+    .days-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.day-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+}
+
+.day-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.day-card__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--olive-dark);
+}
+
+.day-card__km {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--terracotta);
+}
+
+.day-card__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stop {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.stop__index {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--olive);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stop__name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+}
+
+.stop__meta {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 1px;
+}
+
+.day-card--single .day-card__km {
+    color: var(--olive);
+}
+.day-card--single .stop__index {
+    background: #6b7a8a;
+}
+
+// Show more
+.show-more-btn {
+    display: block;
+    margin: 24px auto 0;
+    padding: 10px 28px;
+    background: #4a5d3a;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease;
+}
+
+.show-more-btn:hover {
+    background: #3a4a2d;
+}
+
+.show-more-btn:active {
+    transform: scale(0.97);
+}
+
+.show-more-btn:focus-visible {
+    outline: 2px solid #4a5d3a;
+    outline-offset: 3px;
 }

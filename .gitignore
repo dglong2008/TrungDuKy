@@ -23,3 +23,5 @@ build/
 # Generated files
 # data/processed/
 # models/generated/
+.vercel
+.env*

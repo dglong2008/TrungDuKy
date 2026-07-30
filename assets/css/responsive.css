@@ -8,14 +8,18 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .sidebar-sticky {
     border-radius: 35px;
     position: static;
     overflow-y: hidden;
     margin-bottom: 30px;
     max-height: max-content;
+    display: flex;
+    justify-content: center;
   }
+}
+@media (max-width: 575.98px) {
   .destinations__content .feature {
     gap: 5px;
   }

@@ -72,7 +72,7 @@
                                         name="days"
                                         min="1"
                                         max="30"
-                                        value="5"
+                                        value="3"
                                         inputmode="numeric"
                                     />
                                     <button
@@ -100,7 +100,7 @@
                                         name="topK"
                                         min="1"
                                         max="40"
-                                        value="3"
+                                        value="10"
                                         inputmode="numeric"
                                     />
                                     <button
@@ -121,10 +121,26 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-8">
-                <div class="destinations__showing">Showing places</div>
+                <div class="destinations__showing">Showing 0 places</div>
                 <div
                     class="destinations__grid row g-3 row-cols-1 row-cols-lg-2"
                 ></div>
+
+                <div class="itinerary">
+                    <div class="itinerary__header">
+                        <div>
+                            <div class="itinerary__eyebrow">Itinerary</div>
+                            <h1 class="itinerary__title">
+                                Plan Your Trip by Day
+                            </h1>
+                            <div class="itinerary__summary">
+                                0 selected · estimated 0 km
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="days-grid"></div>
+                </div>
             </div>
         </div>
 
@@ -136,6 +152,6 @@
         ></script>
 
         <!-- JS -->
-        <script src="./assets/js/main.js"></script>
+        <script type="module" src="./assets/js/main.js"></script>
     </body>
 </html>
