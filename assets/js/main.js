@@ -404,6 +404,7 @@ async function displayResults(results) {
                 console.log(des.place);
                 const img = document.createElement("img");
                 img.className = "destinations__img";
+                console.log("Núi Talung, núi Klu" === des.place);
                 img.src = `./assets/sources/img/${destinationsImages[des.place].image}`;
 
                 const title = document.createElement("div");

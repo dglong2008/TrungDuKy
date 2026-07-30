@@ -175,90 +175,93 @@ console.log("kmeansPlusPlus() defined.");
 
 // tsp
 function tspNearestNeighbor(points) {
-    /** Multi-start Nearest Neighbor TSP. Returns list of indices. */
+    // Multi-start Nearest Neighbor TSP. Returns list of indices.
     const n = points.length;
-    const m = 1 << n;
-    if (n <= 1) {
-        const res = [];
-        for (let i = 0; i < n; i++) res.push(i);
-        return res;
-    }
-    const dp = Array.from(
-        {
-            length: m,
-        },
-        () => Array(n).fill(Infinity),
-    );
-    const trace = Array.from(
-        {
-            length: m,
-        },
-        () => Array(n).fill(0),
-    );
-
-    for (let i = 0; i < n; i++) {
-        dp[1 << i][i] = 0;
-    }
-
-    for (let mask = 0; mask < m; mask++) {
+    if (n <= 15) {
+        const m = 1 << n;
+        if (n <= 1) return Array.from({ length: n }, (_, i) => i);
+        const dp = Array.from({ length: m }, () => new Array(n).fill(Infinity));
+        const trace = Array.from({ length: m }, () => new Array(n).fill(0));
         for (let i = 0; i < n; i++) {
-            if (((mask >> i) & 1) === 0) {
-                for (let j = 0; j < n; j++) {
-                    if (((mask >> j) & 1) === 1) {
-                        const dist = haversineKm(points[i], points[j]);
-                        if (dp[mask | (1 << i)][i] > dp[mask][j] + dist) {
-                            dp[mask | (1 << i)][i] = dp[mask][j] + dist;
-                            trace[mask | (1 << i)][i] = j;
+            dp[1 << i][i] = 0;
+        }
+        for (let mask = 0; mask < m; mask++) {
+            for (let i = 0; i < n; i++) {
+                if (((mask >> i) & 1) === 0) {
+                    for (let j = 0; j < n; j++) {
+                        if (((mask >> j) & 1) === 1) {
+                            const newMask = mask | (1 << i);
+                            const cand =
+                                dp[mask][j] + haversineKm(points[i], points[j]);
+                            if (dp[newMask][i] > cand) {
+                                dp[newMask][i] = cand;
+                                trace[newMask][i] = j;
+                            }
                         }
                     }
                 }
             }
         }
-    }
-
-    let bestD = Infinity;
-    const bestO = [];
-    let last = 0;
-    for (let i = 0; i < n; i++) {
-        if (bestD > dp[m - 1][i]) {
-            bestD = dp[m - 1][i];
-            last = i;
+        let best_d = Infinity;
+        let best_o = [];
+        let last = 0;
+        for (let i = 0; i < n; i++) {
+            if (best_d > dp[m - 1][i]) {
+                best_d = dp[m - 1][i];
+                last = i;
+            }
         }
+        let mask = m - 1;
+        best_o.push(last);
+        for (let k = 0; k < n - 1; k++) {
+            const nxt = trace[mask][last];
+            mask ^= 1 << last;
+            last = nxt;
+            best_o.push(last);
+        }
+        best_o.reverse();
+        console.log(best_d);
+        return best_o;
+    } else {
+        let best_order = null;
+        let best_dist = Infinity;
+
+        for (let start = 0; start < n; start++) {
+            const visited = new Set([start]);
+            const order = [start];
+            let cur = start;
+            while (order.length < n) {
+                // TODO 2a: Tìm điểm chưa thăm gần nhất
+                let nxt = null;
+                let minDist = Infinity;
+                for (let i = 0; i < n; i++) {
+                    if (!visited.has(i)) {
+                        const d = euclidean(points[cur], points[i]);
+                        if (d < minDist) {
+                            minDist = d;
+                            nxt = i;
+                        }
+                    }
+                }
+                visited.add(nxt);
+                order.push(nxt);
+                cur = nxt;
+            }
+
+            // TODO 2b: Tính tổng khoảng cách Haversine của route này
+            let total = 0;
+            for (let i = 0; i < order.length - 1; i++) {
+                total += haversineKm(points[order[i]], points[order[i + 1]]);
+            }
+
+            if (total < best_dist) {
+                best_dist = total;
+                best_order = order;
+            }
+        }
+        console.log(best_dist);
+        return best_order;
     }
-
-    let mask = m - 1;
-    bestO.push(last);
-    for (let i = 0; i < n - 1; i++) {
-        const nxt = trace[mask][last];
-        mask ^= 1 << last;
-        last = nxt;
-        bestO.push(last);
-    }
-    bestO.reverse();
-    return bestO;
-    // print(best_d)
-    // print(best_o)
-
-    // best_order, best_dist = None, float('inf')
-
-    // for start in range(n):
-    //     visited, order, cur = {start}, [start], start
-    //     while len(order) < n:
-    //         # TODO 2a: Tìm điểm chưa thăm gần nhất
-    //         nxt = min((i for i in range(n) if i not in visited), key = lambda i: euclidean(points[cur], points[i]))  # ← min((i for i in range(n) if i not in visited),
-    //                     #        key=lambda i: euclidean(points[cur], points[i]))
-    //         visited.add(nxt); order.push(nxt); cur = nxt
-
-    //     # TODO 2b: Tính tổng khoảng cách Haversine của route này
-    //     total = sum(haversine_km(points[order[i]], points[order[i+1]]) for i in range(len(order)-1))  # ← sum(haversine_km(points[order[i]], points[order[i+1]])
-    //                   #        for i in range(len(order)-1))
-
-    //     if total < best_dist:
-    //         best_dist = total; best_order = order
-    // print(best_dist)
-    // print(best_o)
-    // print("haha")
-    // return best_order
 }
 
 console.log("tsp_nearest_neighbor() defined.");

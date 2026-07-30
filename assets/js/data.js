@@ -77,7 +77,7 @@ export const destinations = {
     "Núi Talung, núi Klu": {
         id: 16,
         province: "Quảng Trị",
-        image: "nui-talung-nui-klu.jpg",
+        image: "nui-talung-nui-klu.png",
     },
     "Thành cổ Quảng Trị": {
         id: 17,
