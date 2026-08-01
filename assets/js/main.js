@@ -23,146 +23,18 @@ if (userPreferences)
         const dataObject = Object.fromEntries(formData);
     };
 
-// fetch("./input/stage1/stage1_dataset.json")
-//     .then((response) => {
-//         if (!response.ok) throw new Error("Không thể tải được file");
-//         return response.json();
-//     })
-//     .then((data) => loadData(data))
-//     .catch((error) => console.error(error));
-
-// function loadData(formerData, indices = [-1]) {
-//     const data = [];
-//     if (indices[0] === -1) {
-//         indices.pop();
-//         for (let i = 0; i < formerData.length; i++) indices.push(i);
-//     }
-//     for (let i of indices) {
-//         data.push(formerData[i]);
-//     }
-//     const parent = document.querySelector(".destinations__grid");
-//     parent.innerHTML = "";
-//     const keys = [
-//         "adventure",
-//         "beach",
-//         "budget",
-//         "crowd",
-//         "culture",
-//         "family",
-//         "food",
-//         "history",
-//         "nature",
-//         "photo",
-//         "relax",
-//     ];
-//     const monthMap = {
-//         jan: 1,
-//         feb: 2,
-//         mar: 3,
-//         apr: 4,
-//         may: 5,
-//         jun: 6,
-//         jul: 7,
-//         aug: 8,
-//         sep: 9,
-//         oct: 10,
-//         nov: 11,
-//         dec: 12,
-//     };
-
-//     const len = data.length;
-//     const showing = document.querySelector(".destinations__showing");
-//     showing.innerHTML = `Showing ${len} places`;
-
-//     for (let index in data) {
-//         const des = data[index];
-
-//         const bootstrapCol = document.createElement("div");
-//         bootstrapCol.className = "col";
-
-//         const card = document.createElement("div");
-//         card.className = "destinations__card";
-//         bootstrapCol.appendChild(card);
-
-//         const headings = document.createElement("div");
-//         headings.className = "destinations__headings";
-
-//         const img = document.createElement("img");
-//         img.className = "destinations__img";
-//         img.src =
-//             "https://nld.mediacdn.vn/thumb_w/698/291774122806476800/2024/11/18/dong-phong-nha-ke-bang-dep-den-choang-ngop-17319168370561406931222.jpg";
-
-//         const title = document.createElement("div");
-//         title.className = "destinations__title";
-//         title.innerHTML = `<span>${des["place"]}</span><p>${des["province"]}</p>`;
-//         headings.append(img, title);
-
-//         const content = document.createElement("div");
-//         content.className = "destinations__content";
-//         for (let key of keys) {
-//             const feature = document.createElement("div");
-//             feature.className = "feature";
-
-//             const left = document.createElement("div");
-//             left.className = "left";
-//             left.innerHTML = `${key}`;
-
-//             const mid = document.createElement("div");
-//             mid.className = "mid";
-//             const bar = document.createElement("div");
-//             bar.className = "bar";
-//             const progress = document.createElement("div");
-//             progress.className = "progress";
-//             let points = 100 * (1 - des[key]);
-//             if (roundTo(des[key] * 100, 0) == 0) points = 150;
-
-//             setTimeout(() => {
-//                 progress.style.transform = `translateX(-${points}%)`;
-//             }, 10);
-//             bar.appendChild(progress);
-//             mid.appendChild(bar);
-
-//             const right = document.createElement("div");
-//             right.className = "right";
-//             right.innerHTML = `${roundTo(des[key] * 100, 0)}`;
-
-//             feature.append(left, mid, right);
-
-//             content.appendChild(feature);
-//         }
-
-//         const months = document.createElement("div");
-//         months.className = "destinations__best-months";
-//         const allMonthsStr = "jan-feb-mar-apr-may-jun-jul-aug-sep-oct-nov-dec";
-//         const tmpMonth =
-//             des["best_months"] === "all-year"
-//                 ? allMonthsStr
-//                 : des["best_months"];
-//         const months_input = tmpMonth.split("-");
-//         for (let month of months_input) {
-//             const monthElement = document.createElement("div");
-//             monthElement.className = "month";
-//             monthElement.innerHTML = `${monthMap[month]}`;
-//             months.appendChild(monthElement);
-//         }
-
-//         card.append(headings, content, months);
-//         parent.appendChild(bootstrapCol);
-//     }
-// }
-
 const properties = [
-    { key: "adventure", label: "adventure", value: 50 },
-    { key: "beach", label: "beach", value: 50 },
-    { key: "budget", label: "budget", value: 50 },
-    { key: "crowd", label: "crowd", value: 50 },
-    { key: "culture", label: "culture", value: 50 },
-    { key: "family", label: "family", value: 50 },
-    { key: "food", label: "food", value: 50 },
-    { key: "history", label: "history", value: 50 },
-    { key: "nature", label: "nature", value: 50 },
-    { key: "photo", label: "photo", value: 50 },
-    { key: "relax", label: "relax", value: 50 },
+    { key: "adventure", label: "Adventure", icon: "🏔️", value: 50 },
+    { key: "beach", label: "Beach", icon: "🏖️", value: 50 },
+    { key: "budget", label: "Budget", icon: "💰", value: 50 },
+    { key: "crowd", label: "Crowd", icon: "👥", value: 50 },
+    { key: "culture", label: "Culture", icon: "🎭", value: 50 },
+    { key: "family", label: "Family", icon: "👨‍👩‍👧‍👦", value: 50 },
+    { key: "food", label: "Food", icon: "🍜", value: 50 },
+    { key: "history", label: "History", icon: "🏛️", value: 50 },
+    { key: "nature", label: "Nature", icon: "🌿", value: 50 },
+    { key: "photo", label: "Photography", icon: "📸", value: 50 },
+    { key: "relax", label: "Relax", icon: "🛋️", value: 50 },
 ];
 
 const misc = [
@@ -176,7 +48,7 @@ properties.forEach((p) => {
     const row = document.createElement("div");
     row.className = "field";
     row.innerHTML = `
-      <label for="${p.key}">${p.label}</label>
+      <label for="${p.key}">${p.icon} ${p.label}</label>
       <div class="container">
               <div class="slider-wrap">
         <input type="range" id="${p.key}" name="${p.key}" min="0" max="100" step="5" value="${p.value}" style="--val:${p.value}%">
@@ -223,9 +95,7 @@ function wireStepper(inputId, minusId, plusId, min, max) {
     const minus = document.getElementById(minusId);
     const plus = document.getElementById(plusId);
     const clamp = (v) => Math.min(max, Math.max(min, v));
-    // console.log(minus);
-    // console.log(input);
-    // console.log(plus);
+
     minus.addEventListener("click", () => {
         input.value = clamp((Number(input.value) || min) - 1);
     });
@@ -298,46 +168,6 @@ document.getElementById("prefsForm").addEventListener("submit", (e) => {
         });
 });
 
-// function setupShowMore(gridSelector, initialCount = 10, step = 5) {
-//     const grid = document.querySelector(gridSelector);
-//     let cards;
-//     let visibleCount = 0;
-//     setTimeout(() => {
-//         console.log(grid.querySelectorAll(".col"));
-//         cards = Array.from(grid.querySelectorAll(".col"));
-//         visibleCount = Math.min(initialCount, cards.length);
-//         render();
-//     }, 50);
-
-//     // Create the button once
-//     const showMoreBtn = document.createElement("button");
-//     showMoreBtn.className = "show-more-btn";
-//     grid.insertAdjacentElement("afterend", showMoreBtn);
-
-//     function render() {
-//         console.log(cards);
-//         cards.forEach((card, i) => {
-//             card.style.display = i < visibleCount ? "" : "none";
-//             console.log(card);
-//         });
-
-//         const remaining = cards.length - visibleCount;
-
-//         if (remaining <= 0) {
-//             showMoreBtn.style.display = "none";
-//         } else {
-//             showMoreBtn.style.display = "";
-//             const nextBatch = Math.min(step, remaining);
-//             showMoreBtn.textContent = `Show ${nextBatch} more (${remaining} left)`;
-//         }
-//     }
-
-//     showMoreBtn.addEventListener("click", () => {
-//         visibleCount += step;
-//         render();
-//     });
-// }
-
 async function displayResults(results) {
     const parent = document.querySelector(".destinations__grid");
     parent.innerHTML = "";
@@ -359,6 +189,20 @@ async function displayResults(results) {
         "relax",
     ];
 
+    const icons = [
+        "🏔️", // adventure
+        "🏖️", // beach
+        "💰", // budget
+        "👥", // crowd
+        "🎭", // culture
+        "👨‍👩‍👧‍👦", // family
+        "🍜", // food
+        "🏛️", // history
+        "🌿", // nature
+        "📸", // photo
+        "🛋️", // relax
+    ];
+
     const monthMap = {
         jan: 1,
         feb: 2,
@@ -373,10 +217,6 @@ async function displayResults(results) {
         nov: 11,
         dec: 12,
     };
-
-    // const destinations = require("../../input/stage1/stage1_dataset.json");
-    // console.log(destinations);
-    // console.log(results);
 
     fetch("../../input/stage1/stage1_dataset.json")
         .then((res) => res.json())
@@ -419,13 +259,14 @@ async function displayResults(results) {
 
                 const content = document.createElement("div");
                 content.className = "destinations__content";
+                let featureIndex = 0;
                 for (let key of keys) {
                     const feature = document.createElement("div");
                     feature.className = "feature";
 
                     const left = document.createElement("div");
                     left.className = "left";
-                    left.innerHTML = `${key}`;
+                    left.innerHTML = `${icons[featureIndex]} ${key}`;
 
                     const mid = document.createElement("div");
                     mid.className = "mid";
@@ -449,6 +290,7 @@ async function displayResults(results) {
                     feature.append(left, mid, right);
 
                     content.appendChild(feature);
+                    featureIndex++;
                 }
 
                 const months = document.createElement("div");

@@ -1,0 +1,869 @@
+// =============================================================
+// TrungDuKy — intro landing page
+// Palette drawn from the route itself: citadel gold, river teal,
+// roof terracotta and karst limestone, on aged rice-paper cream.
+// =============================================================
+
+// ---- Tokens --------------------------------------------------
+$paper: #efe6d3;
+$paper-raised: #f7f1e4;
+$ink: #1b2420;
+$ink-soft: rgba(27, 36, 32, 0.62);
+$ink-faint: rgba(27, 36, 32, 0.4);
+$gold: #b9903f;
+$teal: #2e6660;
+$terracotta: #a6472b;
+$karst: #8b8778;
+
+$font-display: "Fraunces", serif;
+$font-body: "Manrope", sans-serif;
+$font-mono: "Space Mono", monospace;
+
+$radius: 3px;
+
+$bp-tablet: 860px;
+$bp-mobile: 560px;
+
+@mixin mobile {
+    @media (max-width: $bp-mobile) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: $bp-tablet) {
+        @content;
+    }
+}
+
+@mixin eyebrow {
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $teal;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+// ---- Reset -----------------------------------------------------
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-body;
+    background: $paper;
+    color: $ink;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wrap {
+    margin-inline: auto;
+    padding-inline: 50px;
+
+    @include mobile {
+        padding-inline: 20px;
+    }
+}
+
+.eyebrow {
+    @include eyebrow;
+    margin-bottom: 14px;
+}
+
+h1,
+h2 {
+    font-family: $font-display;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+}
+
+// ---- Reveal on scroll -------------------------------------------
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+// ---- Buttons -------------------------------------------------
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $font-body;
+    font-weight: 600;
+    border-radius: $radius;
+    white-space: nowrap;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        opacity 0.2s ease;
+
+    &--primary {
+        background: $ink;
+        color: $paper-raised;
+        padding: 14px 26px;
+        font-size: 0.95rem;
+
+        &:hover {
+            background: $teal;
+        }
+    }
+
+    &--sm {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    &--lg {
+        padding: 16px 30px;
+        font-size: 1rem;
+    }
+
+    &--text {
+        color: $ink;
+        font-size: 0.95rem;
+        padding-block: 14px;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-color: $ink;
+        }
+    }
+}
+
+// ---- Header ----------------------------------------------------
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba($paper, 0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba($ink, 0.08);
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding-block: 18px;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: $font-display;
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    &__mark {
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: $ink;
+        color: $paper;
+        font-family: $font-body;
+        font-size: 0.8rem;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &--small {
+        font-size: 1rem;
+    }
+}
+
+.site-nav {
+    display: flex;
+    gap: 28px;
+    font-size: 0.92rem;
+
+    a {
+        opacity: 0.75;
+        transition: opacity 0.2s ease;
+    }
+    a:hover {
+        opacity: 1;
+    }
+
+    @include tablet {
+        display: none;
+    }
+}
+
+// ---- Hero --------------------------------------------------------
+.hero {
+    padding-block: 30px 40px;
+    overflow: hidden;
+
+    &__row {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        align-items: center;
+        gap: 40px;
+
+        @include tablet {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__lede {
+        max-width: 46ch;
+        margin-top: 20px;
+        color: $ink-soft;
+        font-size: 1.05rem;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+    }
+
+    &__map {
+        min-width: 0;
+    }
+}
+
+h1 {
+    font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+
+    em {
+        font-style: italic;
+        color: $terracotta;
+    }
+}
+
+// ---- Route SVG (signature element) --------------------------------
+.route-svg {
+    width: 100%;
+    height: auto;
+}
+
+.contours path {
+    fill: none;
+    stroke: $karst;
+    stroke-width: 1;
+    opacity: 0.35;
+}
+
+.route-line {
+    fill: none;
+    stroke: $terracotta;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 6 8;
+    stroke-dashoffset: 900;
+    transition: stroke-dashoffset 1.6s ease;
+
+    &.is-drawn {
+        stroke-dashoffset: 0;
+    }
+}
+
+.pin {
+    circle {
+        fill: $paper;
+        stroke: $gold;
+        stroke-width: 2.5;
+    }
+
+    text {
+        font-family: $font-body;
+        font-weight: 700;
+        font-size: 15px;
+        fill: $ink;
+    }
+
+    .coord {
+        font-family: $font-mono;
+        font-weight: 400;
+        font-size: 10px;
+        fill: $ink-faint;
+    }
+}
+
+// ---- Provinces --------------------------------------------------
+.provinces {
+    padding-block: 60px 90px;
+    border-top: 1px solid rgba($ink, 0.1);
+}
+
+.province {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 2fr;
+    align-items: baseline;
+    gap: 24px;
+    padding-block: 30px;
+    border-top: 1px solid rgba($ink, 0.14);
+
+    &:last-of-type {
+        border-bottom: 1px solid rgba($ink, 0.14);
+    }
+
+    h2 {
+        font-size: 1.9rem;
+    }
+
+    &__coord {
+        @include eyebrow;
+        color: $karst;
+    }
+
+    &__epithet {
+        font-family: $font-display;
+        font-style: italic;
+        color: $gold;
+        font-size: 1.05rem;
+    }
+
+    p:not(.province__epithet) {
+        color: $ink-soft;
+        max-width: 42ch;
+    }
+
+    @include tablet {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-block: 24px;
+    }
+}
+
+// ---- Closing CTA --------------------------------------------------
+.closing {
+    background: $ink;
+    color: $paper;
+    padding-block: 90px;
+    text-align: center;
+
+    h2 {
+        font-size: clamp(2rem, 3.6vw, 2.8rem);
+        color: $paper-raised;
+    }
+
+    p {
+        margin-block: 20px 32px;
+        color: rgba($paper, 0.68);
+        font-size: 1.05rem;
+    }
+
+    .btn--primary {
+        background: $gold;
+        color: $ink;
+
+        &:hover {
+            background: $paper;
+        }
+    }
+}
+
+// ---- Footer --------------------------------------------------------
+.site-footer {
+    padding-block: 26px;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    nav {
+        display: flex;
+        gap: 22px;
+        font-size: 0.88rem;
+        opacity: 0.75;
+    }
+
+    &__copy {
+        font-family: $font-mono;
+        font-size: 0.78rem;
+        color: $ink-faint;
+    }
+}
+
+// More on intro
+// =============================================
+//  DESTINATION SECTIONS — Travel Planner
+//  Import this file into your main stylesheet
+//  or compile standalone with: sass destination-sections.scss destination-sections.css
+// =============================================
+
+// ── Color tokens (match your :root) ──────────────────────────────────────────
+$dest-cream: #f4f2ea;
+$dest-card: #ffffff;
+$dest-olive: #4a5d3a;
+$dest-olive-dark: #3a4a2d;
+$dest-terracotta: #c76b4a;
+$dest-text: #2f3626;
+$dest-muted: #8a8f7c;
+$dest-border: #e3e0d3;
+
+// ── Typography ────────────────────────────────────────────────────────────────
+$dest-font-body:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+$dest-font-display: Georgia, "Times New Roman", serif;
+
+// ── Spacing & layout ─────────────────────────────────────────────────────────
+$dest-section-gap: clamp(5rem, 10vw, 9rem);
+$dest-card-gap: clamp(2.5rem, 5vw, 5rem);
+$dest-radius: 1.25rem;
+$dest-img-radius: 1rem;
+
+// ── Transition ────────────────────────────────────────────────────────────────
+$dest-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+// =============================================================================
+//  WRAPPER
+// =============================================================================
+.dest-hub {
+    background: $paper;
+    overflow: hidden;
+    padding-bottom: 50px;
+
+    &__inner {
+        margin-inline: auto;
+        padding-inline: clamp(1.25rem, 5vw, 3rem);
+        display: flex;
+        flex-direction: column;
+        gap: $dest-card-gap;
+    }
+}
+
+// =============================================================================
+//  CARD BASE
+// =============================================================================
+.dest-hub__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+    background: $dest-card;
+    border: 1px solid $dest-border;
+    border-radius: $dest-radius;
+    padding: clamp(2rem, 4vw, 3.5rem);
+    box-shadow: 0 2px 12px rgba($dest-text, 0.05);
+    position: relative;
+    overflow: hidden;
+
+    // Reveal animation initial state
+    opacity: 0;
+    transform: translateY(48px);
+    transition:
+        opacity 0.72s $dest-ease,
+        transform 0.72s $dest-ease;
+
+    &.dest-hub__card--visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    // Img-right layout — swap column order
+    &.dest-hub__card--img-right {
+        .dest-hub__visual-wrap {
+            order: 2;
+        }
+        .dest-hub__content {
+            order: 1;
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+
+        &.dest-hub__card--img-right {
+            .dest-hub__visual-wrap {
+                order: 1;
+            }
+            .dest-hub__content {
+                order: 2;
+            }
+        }
+    }
+}
+
+// =============================================================================
+//  IMAGE FRAME
+// =============================================================================
+.dest-hub__visual-wrap {
+    position: relative;
+}
+
+.dest-hub__img-frame {
+    position: relative;
+    border-radius: $dest-img-radius;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            160deg,
+            transparent 50%,
+            rgba($dest-olive-dark, 0.35) 100%
+        );
+        pointer-events: none;
+    }
+}
+
+.dest-hub__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s $dest-ease;
+
+    .dest-hub__card:hover & {
+        transform: scale(1.04);
+    }
+}
+
+.dest-hub__img-badge {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 2;
+    background: $dest-terracotta;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.8rem;
+    border-radius: 2rem;
+    pointer-events: none;
+}
+
+// ── Decorative dots ───────────────────────────────────────────────────────────
+.dest-hub__accent-dot {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.18;
+
+    &--1 {
+        width: 80px;
+        height: 80px;
+        background: $dest-olive;
+        top: -20px;
+        left: -20px;
+    }
+    &--2 {
+        width: 40px;
+        height: 40px;
+        background: $dest-terracotta;
+        bottom: 10px;
+        right: -10px;
+    }
+    &--3 {
+        width: 60px;
+        height: 60px;
+        background: $dest-terracotta;
+        top: -15px;
+        right: -15px;
+    }
+    &--4 {
+        width: 90px;
+        height: 90px;
+        background: $dest-olive;
+        bottom: -20px;
+        left: -25px;
+    }
+    &--5 {
+        width: 70px;
+        height: 70px;
+        background: $dest-olive;
+        top: -18px;
+        left: -18px;
+    }
+    &--6 {
+        width: 45px;
+        height: 45px;
+        background: $dest-terracotta;
+        bottom: 12px;
+        right: -12px;
+    }
+}
+
+// =============================================================================
+//  TEXT CONTENT
+// =============================================================================
+.dest-hub__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.dest-hub__eyebrow {
+    font-family: $dest-font-body;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $dest-terracotta;
+    margin: 0;
+}
+
+.dest-hub__title {
+    font-family: $dest-font-display;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: $dest-text;
+    line-height: 1.2;
+    margin: 0;
+
+    // Subtle underline accent
+    &::after {
+        content: "";
+        display: block;
+        width: 3rem;
+        height: 3px;
+        background: $dest-olive;
+        border-radius: 2px;
+        margin-top: 0.6rem;
+    }
+}
+
+.dest-hub__place-desc {
+    font-family: $dest-font-body;
+    font-size: clamp(0.9rem, 1.5vw, 1.02rem);
+    line-height: 1.75;
+    color: $dest-muted;
+    margin: 0;
+}
+
+// =============================================================================
+//  FEATURE LIST
+// =============================================================================
+.dest-hub__feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    margin-top: 0.4rem;
+}
+
+.dest-hub__feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    background: $dest-cream;
+    border: 1px solid $dest-border;
+    border-radius: 0.75rem;
+    padding: 0.85rem 1rem;
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+
+    &:hover {
+        border-color: $dest-olive;
+        background: lighten($dest-cream, 2%);
+    }
+
+    strong {
+        display: block;
+        font-family: $dest-font-body;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: $dest-olive-dark;
+        margin-bottom: 0.2rem;
+    }
+
+    p {
+        margin: 0;
+        font-size: 0.82rem;
+        line-height: 1.55;
+        color: $dest-muted;
+    }
+}
+
+.dest-hub__feature-icon {
+    font-size: 1.3rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+}
+
+// =============================================================================
+//  CTA BUTTON
+// =============================================================================
+.dest-hub__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    align-self: flex-start;
+    margin-top: 0.3rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    background: $dest-olive;
+    color: #fff;
+    font-family: $dest-font-body;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+        background: $dest-olive-dark;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba($dest-olive-dark, 0.28);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.dest-hub__cta-arrow {
+    transition: transform 0.25s ease;
+
+    .dest-hub__cta:hover & {
+        transform: translateX(4px);
+    }
+}
+
+// =============================================================================
+//  PER-CARD COLOR ACCENTS (thin left border stripe)
+// =============================================================================
+.dest-hub__card--hue {
+    border-left: 4px solid $dest-olive;
+}
+
+.dest-hub__card--qb {
+    border-left: 4px solid $dest-terracotta;
+
+    .dest-hub__title::after {
+        background: $dest-terracotta;
+    }
+    .dest-hub__cta {
+        background: $dest-terracotta;
+    }
+    .dest-hub__cta:hover,
+    .dest-hub__cta:focus-visible {
+        background: darken($dest-terracotta, 10%);
+        box-shadow: 0 6px 20px rgba($dest-terracotta, 0.3);
+    }
+    .dest-hub__eyebrow {
+        color: $dest-olive;
+    }
+    .dest-hub__feature-item:hover {
+        border-color: $dest-terracotta;
+    }
+}
+
+.dest-hub__card--qt {
+    border-left: 4px solid $dest-olive-dark;
+
+    .dest-hub__title::after {
+        background: $dest-olive-dark;
+    }
+}
+
+// =============================================================================
+//  STAGGER DELAY (each card reveals slightly after the previous)
+// =============================================================================
+.dest-hub__card--hue {
+    transition-delay: 0s;
+}
+.dest-hub__card--qb {
+    transition-delay: 0.1s;
+}
+.dest-hub__card--qt {
+    transition-delay: 0.2s;
+}
+
+// =============================================================================
+//  RESPONSIVE — tablet & mobile
+// =============================================================================
+@media (max-width: 900px) {
+    .dest-hub__card {
+        gap: 2rem;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .dest-hub__img-frame {
+        aspect-ratio: 16 / 9;
+    }
+
+    .dest-hub__feature-list {
+        gap: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dest-hub__card {
+        border-left-width: 0;
+        border-top: 4px solid;
+    }
+
+    .dest-hub__card--hue {
+        border-top-color: $dest-olive;
+    }
+    .dest-hub__card--qb {
+        border-top-color: $dest-terracotta;
+    }
+    .dest-hub__card--qt {
+        border-top-color: $dest-olive-dark;
+    }
+
+    .dest-hub__cta {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -4,6 +4,7 @@ $color_3: var(--badge-off-ink);
 $color_4: #fff;
 $font-family_1: "Inter", sans-serif;
 $font-family_2: "Quicksand", sans-serif;
+$font-body: "Manrope", sans-serif;
 
 &:root {
     --bg: #eeebe0;
@@ -24,13 +25,8 @@ $font-family_2: "Quicksand", sans-serif;
 body {
     margin: 0;
     min-height: 100vh;
-    background: var(--bg);
-    font-family: $font-family_1;
+    font-family: $font-body;
     color: $color_1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 32px 16px;
 }
 form.card {
     width: 100%;
@@ -72,7 +68,7 @@ form.card {
     gap: 16px;
     margin-bottom: 26px;
 }
-.avatar {
+.function-avatar {
     width: 64px;
     height: 64px;
     border-radius: 50%;
@@ -80,6 +76,8 @@ form.card {
     overflow: hidden;
     img {
         object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 }
 .title-group {

@@ -19,6 +19,7 @@
 }
 
 .destinations__container {
+    padding: 30px 45px;
     width: 100%;
 }
 
@@ -260,6 +261,7 @@
 
 // Itinerary
 .itinerary {
+    font-family: "Be Vietnam Pro", sans-serif;
     margin: 0 auto;
     margin-top: 50px;
     background: var(--card);
@@ -287,6 +289,7 @@
 .itinerary__title {
     font-size: 22px;
     font-weight: 700;
+    font-family: "Be Vietnam Pro", sans-serif;
     margin: 0 0 6px;
     color: var(--olive-dark);
 }

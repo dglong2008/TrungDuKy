@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TrungDuKy</title>
+        <title>TrungDuKy — Central Vietnam Itinerary Planner</title>
 
         <!-- Favicon -->
         <link
@@ -43,129 +43,419 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="./assets/css/reset.css" />
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        <link rel="stylesheet" href="./assets/css/rangeslider.css" />
-        <link rel="stylesheet" href="./assets/css/responsive.css" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
     <body>
-        <div class="row destinations__container">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="sidebar-sticky">
-                    <form class="card" id="prefsForm">
-                        <div class="header">
-                            <div class="avatar">
-                                <img
-                                    src="./assets/sources/img/logo.jpg"
-                                    alt=""
-                                />
-                            </div>
-                            <div class="title-group">
-                                <h1>TrungDuKy</h1>
-                                <p>Tell us what you're looking for</p>
-                            </div>
-                        </div>
-
-                        <div id="sliders"></div>
-
-                        <div class="divider"></div>
-
-                        <div class="month-heading">
-                            Best months to travel
-                            <span>Tap the months that work for you</span>
-                        </div>
-                        <div class="months" id="months"></div>
-
-                        <div class="trip-details">
-                            <div class="trip-field">
-                                <label for="days">Trip length (days)</label>
-                                <div class="stepper">
-                                    <button
-                                        type="button"
-                                        id="daysMinus"
-                                        aria-label="Decrease days"
-                                    >
-                                        –
-                                    </button>
-                                    <input
-                                        type="number"
-                                        id="days"
-                                        name="days"
-                                        min="1"
-                                        max="20"
-                                        value="3"
-                                        inputmode="numeric"
-                                    />
-                                    <button
-                                        type="button"
-                                        id="daysPlus"
-                                        aria-label="Increase days"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="trip-field">
-                                <label for="topK">Show top</label>
-                                <div class="stepper">
-                                    <button
-                                        type="button"
-                                        id="kMinus"
-                                        aria-label="Decrease number of results"
-                                    >
-                                        –
-                                    </button>
-                                    <input
-                                        type="number"
-                                        id="topK"
-                                        name="topK"
-                                        min="1"
-                                        max="42"
-                                        value="10"
-                                        inputmode="numeric"
-                                    />
-                                    <button
-                                        type="button"
-                                        id="kPlus"
-                                        aria-label="Increase number of results"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="submit">
-                            Save preferences
-                        </button>
-                    </form>
-                </div>
+        <header class="site-header">
+            <div class="wrap site-header__row">
+                <a href="#top" class="logo">
+                    <span class="logo__mark"
+                        ><img src="./assets/sources/img/logo.jpg" alt=""
+                    /></span>
+                    TrungDuKy
+                </a>
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="index.html">Home</a>
+                    <a href="function.html">Plan a Trip</a>
+                    <a href="about.html">About us</a>
+                </nav>
             </div>
-            <div class="col-12 col-md-6 col-lg-8">
-                <div class="destinations__showing">
-                    Showing 0 places of 42 places
-                </div>
-                <div
-                    class="destinations__grid row g-3 row-cols-1 row-cols-lg-2"
-                ></div>
+        </header>
 
-                <div class="itinerary">
-                    <div class="itinerary__header">
-                        <div>
-                            <div class="itinerary__eyebrow">Itinerary</div>
-                            <h1 class="itinerary__title">
-                                Plan Your Trip by Day
-                            </h1>
-                            <div class="itinerary__summary">
-                                0 selected · estimated 0 km and 0 minutes,
-                                velocity: 40 km per hour
-                            </div>
+        <main id="top">
+            <section class="hero">
+                <div class="wrap hero__row">
+                    <div class="hero__copy" data-reveal>
+                        <p class="eyebrow">A field guide to central Vietnam</p>
+                        <h1>
+                            Three provinces.<br /><em>One route</em> worth
+                            taking.
+                        </h1>
+                        <p class="hero__lede">
+                            TrungDuKy plots the caves, citadels and coastlines
+                            of Huế, Quảng Bình and Quảng Trị into a single
+                            itinerary — built from what's actually worth the
+                            drive.
+                        </p>
+                        <div class="hero__actions">
+                            <a
+                                href="./function.html"
+                                class="btn btn--primary btn--lg"
+                                >Start planning</a
+                            >
+                            <a href="#dest-hub-section" class="btn btn--text"
+                                >See the destinations ↓</a
+                            >
                         </div>
                     </div>
 
-                    <div class="days-grid"></div>
+                    <div class="hero__map" aria-hidden="true">
+                        <svg
+                            viewBox="0 0 560 640"
+                            class="route-svg"
+                            id="routeSvg"
+                        >
+                            <g class="contours">
+                                <path
+                                    d="M-20 90 C 120 40, 260 140, 400 70 S 620 60, 700 100"
+                                />
+                                <path
+                                    d="M-20 170 C 140 120, 250 210, 410 150 S 600 150, 700 190"
+                                />
+                                <path
+                                    d="M-20 250 C 130 210, 270 290, 420 230 S 610 240, 700 270"
+                                />
+                                <path
+                                    d="M-20 420 C 150 380, 260 460, 400 400 S 590 410, 700 440"
+                                />
+                                <path
+                                    d="M-20 500 C 140 470, 280 540, 420 480 S 600 490, 700 520"
+                                />
+                            </g>
+                            <path
+                                class="route-line"
+                                id="routeLine"
+                                d="M120 90 C 60 200, 220 220, 190 330 S 60 420, 340 560"
+                            />
+                            <g class="pin" transform="translate(120 90)">
+                                <circle r="7" />
+                                <text x="16" y="4">Quảng Bình</text>
+                                <text class="coord" x="16" y="19">16.46°N</text>
+                            </g>
+                            <g class="pin" transform="translate(190 330)">
+                                <circle r="7" />
+                                <text x="16" y="4">Quảng Trị</text>
+                                <text class="coord" x="16" y="19">17.47°N</text>
+                            </g>
+                            <g class="pin" transform="translate(340 560)">
+                                <circle r="7" />
+                                <text x="16" y="4">Huế</text>
+                                <text class="coord" x="16" y="19">16.75°N</text>
+                            </g>
+                        </svg>
+                    </div>
                 </div>
+            </section>
+
+            <section class="provinces" id="provinces">
+                <div class="wrap">
+                    <p class="eyebrow" data-reveal>The route, north to south</p>
+
+                    <article class="province" data-reveal>
+                        <span class="province__coord"
+                            >16.46°N — Perfume River</span
+                        >
+                        <h2>Huế</h2>
+                        <p class="province__epithet">The Imperial City</p>
+                        <p>
+                            Citadel walls, royal tombs, and a cuisine built for
+                            kings.
+                        </p>
+                    </article>
+
+                    <article class="province" data-reveal>
+                        <span class="province__coord"
+                            >17.47°N — Kẻ Bàng Massif</span
+                        >
+                        <h2>Quảng Bình</h2>
+                        <p class="province__epithet">The Kingdom of Caves</p>
+                        <p>
+                            Phong Nha, Paradise Cave, and the underground rivers
+                            of Sơn Đoòng.
+                        </p>
+                    </article>
+
+                    <article class="province" data-reveal>
+                        <span class="province__coord"
+                            >16.75°N — The 17th Parallel</span
+                        >
+                        <h2>Quảng Trị</h2>
+                        <p class="province__epithet">The Land of Memory</p>
+                        <p>
+                            Vĩnh Mốc's tunnels, the Bến Hải bridge, and the
+                            hills of Khe Sanh.
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- More on INtroduction -->
+        <!-- =============================================
+     DESTINATION SECTIONS — Travel Planner
+     Paste inside your <main> or <body> content
+     ============================================= -->
+
+        <section class="dest-hub" id="dest-hub-section">
+            <div class="dest-hub__inner">
+                <!-- ── SECTION 1 : HUẾ ── -->
+                <article
+                    class="dest-hub__card dest-hub__card--hue dest-hub__card--img-left"
+                    id="dest-card-hue"
+                    data-dest-reveal
+                >
+                    <div
+                        class="dest-hub__visual-wrap dest-hub__visual-wrap--hue"
+                    >
+                        <div class="dest-hub__img-frame">
+                            <img
+                                class="dest-hub__photo"
+                                src="./assets/sources/img/Dai-Noi-Hue-nhin-tu-tren-cao.jpg"
+                                alt="Hue Imperial City – Ngo Mon Gate at night"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <span class="dest-hub__img-badge">Hue</span>
+                        </div>
+                        <div
+                            class="dest-hub__accent-dot dest-hub__accent-dot--1"
+                        ></div>
+                        <div
+                            class="dest-hub__accent-dot dest-hub__accent-dot--2"
+                        ></div>
+                    </div>
+
+                    <div class="dest-hub__content dest-hub__content--hue">
+                        <p class="dest-hub__eyebrow">Featured Destination</p>
+                        <h2 class="dest-hub__title">Hue Imperial City</h2>
+                        <p class="dest-hub__place-desc">
+                            Stretching along the poetic Perfume River, the Hue
+                            Imperial City is the most well-preserved royal
+                            citadel in Vietnam. Ngo Mon Gate, Thai Hoa Palace,
+                            and the Forbidden Purple City—every brick tells the
+                            story of the Nguyen Dynasty. Visitors can stroll
+                            along the ancient moats, explore the ten city gates,
+                            and admire one of Southeast Asia's finest examples
+                            of imperial architecture.
+                        </p>
+                        <div class="dest-hub__feature-list">
+                            <div class="dest-hub__feature-item">
+                                <span
+                                    class="dest-hub__feature-icon"
+                                    aria-hidden="true"
+                                    >🗺️</span
+                                >
+                                <div>
+                                    <strong>Personalized Itineraries</strong>
+                                    <p>
+                                        We automatically create the best
+                                        itinerary for Hue based on your travel
+                                        duration, interests, and budget.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="dest-hub__feature-item">
+                                <span
+                                    class="dest-hub__feature-icon"
+                                    aria-hidden="true"
+                                    >🏯</span
+                                >
+                                <div>
+                                    <strong>Destination Guide</strong>
+                                    <p>
+                                        Every attraction includes opening hours,
+                                        admission fees, transportation tips, and
+                                        community traveler reviews.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a
+                            class="dest-hub__cta"
+                            href="function.html"
+                            aria-label="Explore Hue on the map"
+                        >
+                            Explore Hue
+                            <span class="dest-hub__cta-arrow" aria-hidden="true"
+                                >→</span
+                            >
+                        </a>
+                    </div>
+                </article>
+
+                <!-- ── SECTION 2 : QUẢNG BÌNH ── -->
+                <article
+                    class="dest-hub__card dest-hub__card--qb dest-hub__card--img-right"
+                    id="dest-card-qb"
+                    data-dest-reveal
+                >
+                    <div class="dest-hub__content dest-hub__content--qb">
+                        <p class="dest-hub__eyebrow">
+                            UNESCO World Natural Heritage
+                        </p>
+                        <h2 class="dest-hub__title">Phong Nha Cave</h2>
+                        <p class="dest-hub__place-desc">
+                            Hidden within Phong Nha–Ke Bang National Park, Phong
+                            Nha Cave is home to one of the world's longest
+                            underground rivers ever discovered. Light reflecting
+                            off thousand-year- old stalactites creates a
+                            breathtaking scene unlike any other. It is a
+                            must-visit destination for every adventure
+                            enthusiast.
+                        </p>
+                        <div class="dest-hub__feature-list">
+                            <div class="dest-hub__feature-item">
+                                <span
+                                    class="dest-hub__feature-icon"
+                                    aria-hidden="true"
+                                    >📅</span
+                                >
+                                <div>
+                                    <strong>Smart Recommendations</strong>
+                                    <p>
+                                        Receive personalized travel suggestions
+                                        based on your interests and preferences
+                                        in just a few seconds.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="dest-hub__feature-item">
+                                <span
+                                    class="dest-hub__feature-icon"
+                                    aria-hidden="true"
+                                    >🌦️</span
+                                >
+                                <div>
+                                    <strong>Best Time to Visit</strong>
+                                    <p>
+                                        Discover the ideal travel season,
+                                        weather alerts, and the best cave
+                                        conditions throughout the year.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a
+                            class="dest-hub__cta"
+                            href="function.html"
+                            aria-label="Plan your trip to Quang Binh"
+                        >
+                            Plan Your Trip
+                            <span class="dest-hub__cta-arrow" aria-hidden="true"
+                                >→</span
+                            >
+                        </a>
+                    </div>
+
+                    <div
+                        class="dest-hub__visual-wrap dest-hub__visual-wrap--qb"
+                    >
+                        <div class="dest-hub__img-frame">
+                            <img
+                                class="dest-hub__photo"
+                                src="./assets/sources/img/phong-nha.jpg"
+                                alt="Phong Nha Cave – mysterious underground river"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <span class="dest-hub__img-badge">Quang Binh</span>
+                        </div>
+                        <div
+                            class="dest-hub__accent-dot dest-hub__accent-dot--3"
+                        ></div>
+                        <div
+                            class="dest-hub__accent-dot dest-hub__accent-dot--4"
+                        ></div>
+                    </div>
+                </article>
+
+                <!-- ── SECTION 3 : QUẢNG TRỊ ── -->
+                <article
+                    class="dest-hub__card dest-hub__card--qt dest-hub__card--img-left"
+                    id="dest-card-qt"
+                    data-dest-reveal
+                >
+                    <div
+                        class="dest-hub__visual-wrap dest-hub__visual-wrap--qt"
+                    >
+                        <div class="dest-hub__img-frame">
+                            <img
+                                class="dest-hub__photo"
+                                src="./assets/sources/img/hienluong.png"
+                                alt="Hien Luong Bridge – a symbol of reconciliation in Quang Tri"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                            <span class="dest-hub__img-badge">Quang Tri</span>
+                        </div>
+                        <div
+                            class="dest-hub__accent-dot dest-hub__accent-dot--5"
+                        ></div>
+                        <div
+                            class="dest-hub__accent-dot dest-hub__accent-dot--6"
+                        ></div>
+                    </div>
+
+                    <div class="dest-hub__content dest-hub__content--qt">
+                        <p class="dest-hub__eyebrow">Historical Journey</p>
+                        <h2 class="dest-hub__title">Hien Luong Bridge</h2>
+                        <p class="dest-hub__place-desc">
+                            Spanning the Ben Hai River, Hien Luong Bridge once
+                            marked the temporary boundary separating North and
+                            South Vietnam for two decades. Today, its iconic
+                            blue-and-yellow design symbolizes national
+                            reconciliation and unity, attracting millions of
+                            visitors who come to reflect on history while
+                            enjoying the peaceful beauty of Central Vietnam.
+                        </p>
+                        <div class="dest-hub__feature-list">
+                            <div class="dest-hub__feature-item">
+                                <span
+                                    class="dest-hub__feature-icon"
+                                    aria-hidden="true"
+                                    >📍</span
+                                >
+                                <div>
+                                    <strong>Interactive Map</strong>
+                                    <p>
+                                        Pin every attraction and travel by
+                                        motorbike or bus with optimized route
+                                        planning.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="dest-hub__feature-item">
+                                <span
+                                    class="dest-hub__feature-icon"
+                                    aria-hidden="true"
+                                    >📖</span
+                                >
+                                <div>
+                                    <strong>Story Corner</strong>
+                                    <p>
+                                        Every landmark comes with carefully
+                                        curated historical and cultural stories
+                                        written by local experts.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a
+                            class="dest-hub__cta"
+                            href="function.html"
+                            aria-label="Learn about the history of Quang Tri"
+                        >
+                            Learn More
+                            <span class="dest-hub__cta-arrow" aria-hidden="true"
+                                >→</span
+                            >
+                        </a>
+                    </div>
+                </article>
             </div>
-        </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="wrap site-footer__row">
+                <a href="#top" class="logo logo--small">
+                    <span class="logo__mark"
+                        ><img src="./assets/sources/img/logo.jpg" alt=""
+                    /></span>
+                    TrungDuKy
+                </a>
+                <span class="site-footer__copy">© 2026 TrungDuKy</span>
+            </div>
+        </footer>
 
         <!-- Bootstrap -->
         <script
@@ -175,6 +465,6 @@
         ></script>
 
         <!-- JS -->
-        <script type="module" src="./assets/js/main.js"></script>
+        <script type="module" src="./assets/js/index.js"></script>
     </body>
 </html>

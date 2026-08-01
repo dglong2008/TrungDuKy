@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TrungDuKy — Central Vietnam Itinerary Planner</title>
+
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="/assets/sources/favicon/favicon-96x96.png"
+            sizes="96x96"
+        />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="/assets/sources/favicon/favicon.svg"
+        />
+        <link rel="shortcut icon" href="/assets/sources/favicon/favicon.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/assets/sources/favicon/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/assets/sources/favicon/site.webmanifest" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Bootstrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="./assets/css/about.css" />
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="wrap site-header__row">
+                <a href="#top" class="logo">
+                    <span class="logo__mark"
+                        ><img src="./assets/sources/img/logo.jpg" alt=""
+                    /></span>
+                    TrungDuKy
+                </a>
+                <nav class="site-nav" aria-label="Primary">
+                    <a href="index.html">Home</a>
+                    <a href="function.html">Plan a Trip</a>
+                    <a href="about.html">About us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- =============================================
+     ABOUT US SECTION — Travel Planner
+     Paste inside your <main> or <body> content
+     ============================================= -->
+
+        <section
+            class="abt-wrap"
+            id="abt-section"
+            aria-labelledby="abt-heading"
+        >
+            <div class="abt-wrap__inner">
+                <!-- ── Section header ───────────────────────────────────────────────────── -->
+                <header class="abt-wrap__header" data-abt-reveal>
+                    <p class="abt-wrap__eyebrow">Behind the Journey</p>
+                    <h2 class="abt-wrap__title" id="abt-heading">About us</h2>
+                    <p class="abt-wrap__subtitle">
+                        This project was developed as part of
+                        <strong
+                            >SEAS 2026 — Summer in Engineering &amp; Applied
+                            Science</strong
+                        >, a prestigious summer research program for students
+                        passionate about applying technology to solve real-world
+                        challenges. We built this intelligent travel
+                        recommendation platform with the goal of making it
+                        easier for everyone to discover and experience the rich
+                        culture, history, and natural beauty of Central Vietnam.
+                    </p>
+                </header>
+
+                <!-- ── Students ─────────────────────────────────────────────────────────── -->
+                <div class="abt-wrap__block" data-abt-reveal>
+                    <h3 class="abt-wrap__block-title">
+                        <span class="abt-wrap__block-line"></span>
+                        Thành viên sinh viên
+                        <span class="abt-wrap__block-line"></span>
+                    </h3>
+
+                    <ul
+                        class="abt-wrap__grid abt-wrap__grid--students"
+                        role="list"
+                    >
+                        <li class="abt-wrap__member-item" data-abt-card>
+                            <div
+                                class="abt-wrap__member-card abt-wrap__member-card--student"
+                            >
+                                <div class="abt-wrap__avatar-ring">
+                                    <img
+                                        class="abt-wrap__avatar"
+                                        src="./assets/sources/img/quangminh.jpg"
+                                        alt="Ảnh đại diện Ngô Trần Quang Minh"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div class="abt-wrap__member-info">
+                                    <h4 class="abt-wrap__member-name">
+                                        Ngô Trần Quang Minh
+                                    </h4>
+                                    <p class="abt-wrap__member-school">
+                                        Đại học Khoa học Tự nhiên, ĐHQG TP.HCM
+                                    </p>
+                                    <p class="abt-wrap__member-role">
+                                        Computer Science
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="abt-wrap__member-item" data-abt-card>
+                            <div
+                                class="abt-wrap__member-card abt-wrap__member-card--student"
+                            >
+                                <div class="abt-wrap__avatar-ring">
+                                    <img
+                                        class="abt-wrap__avatar"
+                                        src="./assets/sources/img/hungtien.jpg"
+                                        alt="Ảnh đại diện Trần Hưng Tiến"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div class="abt-wrap__member-info">
+                                    <h4 class="abt-wrap__member-name">
+                                        Trần Hưng Tiến
+                                    </h4>
+                                    <p class="abt-wrap__member-school">
+                                        Đại học Khoa học Tự nhiên, ĐHQG TP.HCM
+                                    </p>
+                                    <p class="abt-wrap__member-role">
+                                        Computer Science
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="abt-wrap__member-item" data-abt-card>
+                            <div
+                                class="abt-wrap__member-card abt-wrap__member-card--student"
+                            >
+                                <div class="abt-wrap__avatar-ring">
+                                    <img
+                                        class="abt-wrap__avatar"
+                                        src="./assets/sources/img/gialong.jpg"
+                                        alt="Ảnh đại diện Đoàn Gia Long"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div class="abt-wrap__member-info">
+                                    <h4 class="abt-wrap__member-name">
+                                        Đoàn Gia Long
+                                    </h4>
+                                    <p class="abt-wrap__member-school">
+                                        Đại học Công nghệ Thông tin, ĐHQG TP.HCM
+                                    </p>
+                                    <p class="abt-wrap__member-role">
+                                        Computer Science
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="abt-wrap__member-item" data-abt-card>
+                            <div
+                                class="abt-wrap__member-card abt-wrap__member-card--student"
+                            >
+                                <div class="abt-wrap__avatar-ring">
+                                    <img
+                                        class="abt-wrap__avatar"
+                                        src="./assets/sources/img/doanh.jpg"
+                                        alt="Ảnh đại diện Tôn Thất Bảo Doanh"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div class="abt-wrap__member-info">
+                                    <h4 class="abt-wrap__member-name">
+                                        Tôn Thất Bảo Doanh
+                                    </h4>
+                                    <p class="abt-wrap__member-school">
+                                        Đại học Công nghệ Thông tin, ĐHQG TP.HCM
+                                    </p>
+                                    <p class="abt-wrap__member-role">
+                                        Artificial intelligent
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- ── Assistants ───────────────────────────────────────────────────────── -->
+                <div
+                    class="abt-wrap__block abt-wrap__block--assistants"
+                    data-abt-reveal
+                >
+                    <h3
+                        class="abt-wrap__block-title abt-wrap__block-title--asst"
+                    >
+                        <span
+                            class="abt-wrap__block-line abt-wrap__block-line--asst"
+                        ></span>
+                        Trợ giảng &amp; Hướng dẫn viên
+                        <span
+                            class="abt-wrap__block-line abt-wrap__block-line--asst"
+                        ></span>
+                    </h3>
+
+                    <ul
+                        class="abt-wrap__grid abt-wrap__grid--assistants"
+                        role="list"
+                    >
+                        <li class="abt-wrap__member-item" data-abt-card>
+                            <div
+                                class="abt-wrap__member-card abt-wrap__member-card--asst abt-wrap__member-card--asst-1"
+                            >
+                                <div
+                                    class="abt-wrap__asst-deco"
+                                    aria-hidden="true"
+                                ></div>
+                                <div
+                                    class="abt-wrap__avatar-ring abt-wrap__avatar-ring--asst"
+                                >
+                                    <img
+                                        class="abt-wrap__avatar"
+                                        src="./assets/sources/img/tamphu.jpg"
+                                        alt="Ảnh đại diện Trần Thị Tâm Phú"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div class="abt-wrap__member-info">
+                                    <h4
+                                        class="abt-wrap__member-name abt-wrap__member-name--asst"
+                                    >
+                                        Trần Thị Tâm Phú
+                                    </h4>
+
+                                    <p
+                                        class="abt-wrap__member-role abt-wrap__member-role--asst"
+                                    >
+                                        Trợ giảng SEAS 2026
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="abt-wrap__member-item" data-abt-card>
+                            <div
+                                class="abt-wrap__member-card abt-wrap__member-card--asst abt-wrap__member-card--asst-2"
+                            >
+                                <div
+                                    class="abt-wrap__asst-deco"
+                                    aria-hidden="true"
+                                ></div>
+                                <div
+                                    class="abt-wrap__avatar-ring abt-wrap__avatar-ring--asst"
+                                >
+                                    <img
+                                        class="abt-wrap__avatar"
+                                        src="./assets/sources/img/totrinh.jpg"
+                                        alt="Ảnh đại diện Châu Nguyễn Tố Trinh"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div class="abt-wrap__member-info">
+                                    <h4
+                                        class="abt-wrap__member-name abt-wrap__member-name--asst"
+                                    >
+                                        Châu Nguyễn Tố Trinh
+                                    </h4>
+
+                                    <p
+                                        class="abt-wrap__member-role abt-wrap__member-role--asst"
+                                    >
+                                        Trợ giảng SEAS 2026
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="abt-wrap__member-item" data-abt-card>
+                            <div
+                                class="abt-wrap__member-card abt-wrap__member-card--asst abt-wrap__member-card--asst-3"
+                            >
+                                <div
+                                    class="abt-wrap__asst-deco"
+                                    aria-hidden="true"
+                                ></div>
+                                <div
+                                    class="abt-wrap__avatar-ring abt-wrap__avatar-ring--asst"
+                                >
+                                    <img
+                                        class="abt-wrap__avatar"
+                                        src="./assets/sources/img/nguyenkhoi.jpg"
+                                        alt="Ảnh đại diện Nguyễn Tiết Nguyên Khôi"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+                                <div class="abt-wrap__member-info">
+                                    <h4
+                                        class="abt-wrap__member-name abt-wrap__member-name--asst"
+                                    >
+                                        Nguyễn Tiết Nguyên Khôi
+                                    </h4>
+
+                                    <p
+                                        class="abt-wrap__member-role abt-wrap__member-role--asst"
+                                    >
+                                        Trợ giảng SEAS 2026
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /.abt-wrap__inner -->
+        </section>
+
+        <footer class="site-footer">
+            <div class="wrap site-footer__row">
+                <a href="#top" class="logo logo--small">
+                    <span class="logo__mark"
+                        ><img src="./assets/sources/img/logo.jpg" alt=""
+                    /></span>
+                    TrungDuKy
+                </a>
+                <span class="site-footer__copy">© 2026 TrungDuKy</span>
+            </div>
+        </footer>
+
+        <!-- Bootstrap -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- JS -->
+        <script type="module" src="./assets/js/index.js"></script>
+        <script src="./assets/js/about.js"></script>
+    </body>
+</html>
