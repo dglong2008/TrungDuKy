@@ -228,16 +228,12 @@ async function displayResults(results) {
                     (dest) => dest.place == des.place,
                 );
 
-                const bootstrapCol = document.createElement("div");
-                bootstrapCol.className = "col";
-
                 const card = document.createElement("div");
                 card.className = "destinations__card";
                 if (index < 3) {
                     if (index === "0") card.classList.add("top");
                     else card.classList.add("emphasize");
                 }
-                bootstrapCol.appendChild(card);
 
                 const headings = document.createElement("div");
                 headings.className = "destinations__headings";
@@ -331,7 +327,7 @@ async function displayResults(results) {
                 footerWrapper.append(months, checkboxWrapper);
 
                 card.append(headings, content, footerWrapper);
-                parent.appendChild(bootstrapCol);
+                parent.appendChild(card);
             }
             renderItinerary();
         });

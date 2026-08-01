@@ -1,6 +1,29 @@
+@media (max-width: 1399.98px) {
+  .destinations__content .left {
+    width: 40%;
+  }
+  .destinations__content .mid {
+    width: 55%;
+  }
+  .destinations__content .right {
+    width: 5%;
+  }
+}
 @media (max-width: 1199.98px) {
   .trip-details {
     grid-template-columns: 1fr;
+  }
+  .destinations__grid {
+    grid-template-columns: 1fr;
+  }
+  .destinations__content .left {
+    width: 30%;
+  }
+  .destinations__content .mid {
+    width: 60%;
+  }
+  .destinations__content .right {
+    width: 10%;
   }
 }
 @media (max-width: 991.98px) {

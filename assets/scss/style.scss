@@ -18,6 +18,12 @@
     }
 }
 
+.destinations__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
 .destinations__container {
     padding: 30px 45px;
     width: 100%;
@@ -31,6 +37,7 @@
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
 }
 .destinations__card.emphasize {
@@ -188,12 +195,14 @@
 }
 
 .footerWrapper {
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
 
     .checkbox-wrapper {
         display: inline-flex;
-        align-items: center;
+        align-items: flex-end;
+        justify-content: space-between;
         gap: 5px;
         cursor: pointer;
         font-size: 15px;
