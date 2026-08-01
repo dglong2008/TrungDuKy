@@ -127,6 +127,7 @@
 }
 .destinations__content .feature {
   display: flex;
+  justify-content: center;
   gap: 5px;
 }
 .destinations__content .left {
@@ -134,13 +135,16 @@
 }
 .destinations__content .mid {
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .destinations__content .right {
   width: 10%;
   text-align: right;
 }
 .destinations__content .bar {
-  height: 80%;
+  height: 55%;
   background-color: #e7ebdd;
   border-radius: 20px;
   position: relative;
