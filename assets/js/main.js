@@ -237,10 +237,8 @@ async function displayResults(results) {
 
                 const headings = document.createElement("div");
                 headings.className = "destinations__headings";
-                console.log(des.place);
                 const img = document.createElement("img");
                 img.className = "destinations__img";
-                console.log("Núi Talung, núi Klu" === des.place);
                 img.src = `./assets/sources/img/${destinationsImages[des.place].image}`;
 
                 const title = document.createElement("div");

@@ -126,6 +126,9 @@ h2 {
   gap: 24px;
   padding-block: 18px;
 }
+.site-header .media a i {
+  font-size: 1.5rem;
+}
 
 .logo {
   display: flex;
@@ -615,7 +618,7 @@ h1 em {
 }
 
 .dest-hub__card--qb {
-  border-left: 4px solid #c76b4a;
+  border-right: 4px solid #c76b4a;
 }
 .dest-hub__card--qb .dest-hub__title::after {
   background: #c76b4a;

@@ -220,7 +220,6 @@ function tspNearestNeighbor(points) {
             best_o.push(last);
         }
         best_o.reverse();
-        console.log(best_d);
         return best_o;
     } else {
         let best_order = null;
@@ -259,7 +258,6 @@ function tspNearestNeighbor(points) {
                 best_order = order;
             }
         }
-        console.log(best_dist);
         return best_order;
     }
 }

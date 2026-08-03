@@ -181,6 +181,12 @@ h2 {
         gap: 24px;
         padding-block: 18px;
     }
+
+    .media {
+        a i {
+            font-size: 1.5rem;
+        }
+    }
 }
 
 .logo {
@@ -784,7 +790,7 @@ $dest-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .dest-hub__card--qb {
-    border-left: 4px solid $dest-terracotta;
+    border-right: 4px solid $dest-terracotta;
 
     .dest-hub__title::after {
         background: $dest-terracotta;
