@@ -4,16 +4,16 @@ A travel recommendation project designed to help users discover destinations and
 
 ## Team Members
 
-- Ngô Trần Quang Minh
-- Trần Hưng Tiến
-- Đoàn Gia Long
-- Nguyễn Tất Bảo Doanh
+- Ngô Trần Quang Minh - HCMUS, VNU-HCM
+- Trần Hưng Tiến - HCMUS, VNU-HCM
+- Đoàn Gia Long - UIT, VNU-HCM
+- Nguyễn Tất Bảo Doanh - UIT, VNU-HCM
 
 ## Mentors
 
-- Châu Nguyễn Tố Trinh
-- Trần Thị Tâm Phú
-- Nguyễn Tiết Nguyên Khôi
+- Châu Nguyễn Tố Trinh - UET, VNU
+- Trần Thị Tâm Phú - Fulbright University Vietnam
+- Nguyễn Tiết Nguyên Khôi - PhD Student @ NUS
 
 ## Project Overview
 
